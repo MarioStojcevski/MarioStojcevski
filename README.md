@@ -1,5 +1,4 @@
 <div id="header" align="center">
-  🇲🇰 MARIO STOJCHEVSKI 🇲🇰
 
   <img src="https://64.media.tumblr.com/b0217fd6674675c261b9f7954cf18bd4/tumblr_p403qe7Agr1r3smugo1_500.gif" width="300"/>
 
