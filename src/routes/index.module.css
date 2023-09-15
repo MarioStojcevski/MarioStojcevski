@@ -1,0 +1,10 @@
+div {
+  background-color: greenyellow;
+  height: 95.6vh;
+  color: white
+}
+
+h1 {
+  width: fit-content;
+  margin: auto;
+}
