@@ -21,6 +21,5 @@
       "~/*": ["./src/*"]
     }
   },
-  "files": ["./.eslintrc.json"],
   "include": ["src", "./*.d.ts", "./*.config.ts"]
 }
