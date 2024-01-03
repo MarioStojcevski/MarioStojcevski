@@ -5,7 +5,7 @@ import './index.module.css';
 export default component$(() => (
   <div>
     <h1>
-      hello world
+      Mario Stojcevski
     </h1>
   </div>
 ));
@@ -15,7 +15,6 @@ export const head: DocumentHead = {
   meta: [
     {
       name: 'This is my portfolio',
-
     },
   ],
 };
