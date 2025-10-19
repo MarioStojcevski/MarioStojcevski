@@ -1,5 +1,6 @@
 {
   "name": "mariostojcevski",
+  "homepage": "https://MarioStojcevsksi.github.io/MarioStojcevski",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +12,8 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
@@ -21,6 +23,7 @@
     "eslint": "^9.35.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.43.0",
