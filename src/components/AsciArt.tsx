@@ -1,30 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function AsciArt() {
+type AsciArtProps = {
+  colors: string[];
+  color: string;
+  setColors: React.Dispatch<React.SetStateAction<string[]>>;
+  art: string;
+};
 
-  const art = `
-▄███████▄   ▄█     ▄███████▄    ▄████████    ▄████████
-██▀     ▄██ ███    ███    ███   ███    ███   ███    ███
-      ▄███▀ ███▌   ███    ███   ███    █▀    ███    ███
-  ▀█▀▄███▀▄▄ ███▌   ███    ███  ▄███▄▄▄      ▄███▄▄▄▄██▀
-    ▄███▀   ▀ ███▌ ▀█████████▀  ▀▀███▀▀▀     ▀▀███▀▀▀▀▀
-  ▄███▀       ███    ███          ███    █▄  ▀███████████
-  ███▄     ▄█ ███    ███          ███    ███   ███    ███
-    ▀████████▀ █▀    ▄████▀        ██████████   ███    ███
-`;
-  const [colors, setColors] = useState([
-    "#ff0055",
-    "#ffae00",
-    "#ffee00",
-    "#00cc55",
-    "#00aaff",
-    "#cc66ff",
-    "#ff66cc",
-    "#ffffff",
-    "#ff5500",
-    "#55ff00",
-  ]);
-
+export default function AsciArt({ colors, color, setColors, art }: AsciArtProps) {
   const lines = art.trim().split("\n");
 
   const generateColors = () => {
@@ -41,10 +24,11 @@ export default function AsciArt() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   return (
     <div
       style={{
-        background: "#000",
+        background: color,
         height: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -53,8 +37,8 @@ export default function AsciArt() {
     >
       <pre
         style={{
+          color: "black",
           fontFamily: "monospace",
-          color: "#fff",
           whiteSpace: "pre",
           lineHeight: "1.1",
         }}
@@ -63,8 +47,7 @@ export default function AsciArt() {
           <div key={line + i}>
             {line.split("").map((ch, j) => {
               if (ch === " ") return <span key={line + j}>&nbsp;</span>;
-              const color = colors[Math.floor(Math.random() * colors.length)];
-              return <span key={line + ch + j} style={{ color }}>{ch}</span>
+              return <span key={line + ch + j}>{ch}</span>
             })}
           </div>
         ))}
