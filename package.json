@@ -1,12 +1,12 @@
 {
   "name": "mariostojcevski",
-  "homepage": ".",
+  "homepage": "https://mariostojcevski.github.io/MarioStojcevski/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --base=/MarioStojcevski/",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function AsciArt() {
+
   const art = `
 ▄███████▄   ▄█     ▄███████▄    ▄████████    ▄████████
 ██▀     ▄██ ███    ███    ███   ███    ███   ███    ███
@@ -27,12 +28,18 @@ export default function AsciArt() {
   const lines = art.trim().split("\n");
 
   const generateColors = () => {
-    return Array.from({ length: colors.length }, () =>
+    setColors(Array.from({ length: colors.length }, () =>
       `#${Math.floor(Math.random() * 0xffffff)
         .toString(16)
         .padStart(6, "0")}`
-    );
+    ));
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(generateColors, 500);
+    return () => clearInterval(intervalId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
@@ -53,34 +60,15 @@ export default function AsciArt() {
         }}
       >
         {lines.map((line, i) => (
-          <div key={i}>
+          <div key={line + i}>
             {line.split("").map((ch, j) => {
-              if (ch === " ") return <span key={j}>&nbsp;</span>;
+              if (ch === " ") return <span key={line + j}>&nbsp;</span>;
               const color = colors[Math.floor(Math.random() * colors.length)];
-              return (
-                <>
-                <span key={j} style={{ color }}>
-                  {ch}
-                </span>
-
-                </>
-              );
+              return <span key={line + ch + j} style={{ color }}>{ch}</span>
             })}
           </div>
         ))}
       </pre>
-      <button
-        onClick={() => setColors(generateColors())}
-        style={{
-          position: "absolute",
-          top: "20px",
-          right: "20px",
-          padding: "10px 20px",
-          fontSize: "16px",
-          cursor: "pointer",
-        }}>
-          Click me
-      </button>
     </div>
   );
 }
