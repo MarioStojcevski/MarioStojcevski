@@ -1,7 +1,10 @@
+import AsciArt from "./components/AsciArt"
+
 const App = () => {
   return (
     <div> 
-      <span>If you see this im too lazy to set up a proper website :)</span>
+      <AsciArt />
+      <span>Hey its Mario, If you see this im too lazy to set up a proper website :)</span>
 ▄███████▄   ▄█     ▄███████▄    ▄████████    ▄████████ 
 ██▀     ▄██ ███    ███    ███   ███    ███   ███    ███ 
       ▄███▀ ███▌   ███    ███   ███    █▀    ███    ███ 
