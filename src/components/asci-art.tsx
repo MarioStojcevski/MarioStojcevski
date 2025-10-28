@@ -14,7 +14,7 @@ export default function AsciArt({ art }: AsciArtProps) {
         alignItems: "center",
       }}
     >
-      <pre style={{ whiteSpace: "pre", lineHeight: "1" }}>
+      <pre style={{ whiteSpace: "pre", lineHeight: "1", color: '#BAC4C8' }}>
         {lines.map((line, i) => (
           <div key={line + i}>
             {line.split("").map((ch, j) => {
