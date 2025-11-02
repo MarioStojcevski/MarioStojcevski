@@ -10,7 +10,7 @@ const Navigation = () => {
     <NavigationMenu className="z-5">
       <NavigationMenuList>
         <NavLink to="/" className={navigationMenuTriggerStyle()}>
-          Home
+          <img width={25} src="./logo.png" />
         </NavLink>
         <NavLink to="/about-me" className={navigationMenuTriggerStyle()}>
           About me

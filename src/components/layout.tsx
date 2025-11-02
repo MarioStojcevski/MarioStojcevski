@@ -4,7 +4,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navigation />
-      <main>{children}</main>
+      <main className="py-5">{children}</main>
     </>
   );
 };
