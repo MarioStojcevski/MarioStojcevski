@@ -26,4 +26,4 @@ export default function AsciArt({ art }: AsciArtProps) {
       </pre>
     </div>
   );
-}
+};
