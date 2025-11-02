@@ -111,4 +111,4 @@ Please change the parent <Route path="${Q}"> to <Route path="${Q==="/"?"*":`${Q}
               | $$                          
               | $$                          
               |__/                          
-`],jb=()=>G.jsx(Di,{children:Bb.map(i=>G.jsx(Lb,{art:i},i))}),qb=()=>G.jsx(Di,{children:"home"});Ag.createRoot(document.getElementById("root")).render(G.jsx(b.StrictMode,{children:G.jsx(qp,{children:G.jsxs(yp,{children:[G.jsx(Pa,{path:"index",element:G.jsx(qb,{})}),G.jsx(Pa,{path:"about-me",element:G.jsx(Ub,{})}),G.jsx(Pa,{path:"projects",element:G.jsx(Hb,{})}),G.jsx(Pa,{path:"art",element:G.jsx(jb,{})})]})})}));
+`],jb=()=>G.jsx(Di,{children:Bb.map(i=>G.jsx(Lb,{art:i},i))}),qb=()=>G.jsx(Di,{children:"home"});Ag.createRoot(document.getElementById("root")).render(G.jsx(b.StrictMode,{children:G.jsx(qp,{children:G.jsxs(yp,{children:[G.jsx(Pa,{index:!0,element:G.jsx(qb,{})}),G.jsx(Pa,{path:"about-me",element:G.jsx(Ub,{})}),G.jsx(Pa,{path:"projects",element:G.jsx(Hb,{})}),G.jsx(Pa,{path:"art",element:G.jsx(jb,{})})]})})}));
