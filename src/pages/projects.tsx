@@ -8,7 +8,7 @@ const Projects = () => {
     <Layout>
       <div className="grid sm:grid-cols-2">
         {projects.map(project => (
-          <Card className="bg-chart-2 mx-5 sm:odd:mr-5 sm:even:ml-5 my-5 cursor-pointer">
+          <Card key={project.title} className="bg-chart-2 mx-5 sm:odd:mr-5 sm:even:ml-5 my-5 cursor-pointer">
             <CardHeader>{project.title}</CardHeader>
             <hr className="mx-6" />
             <CardContent>
@@ -22,7 +22,7 @@ const Projects = () => {
               {project.description}
             </CardContent>
             <CardFooter className="overflow-x-auto flex flex-wrap">
-              {project.technologies.map(tech => <Badge className="mx-0.5 my-0.5">{tech}</Badge>)}
+              {project.technologies.map(tech => <Badge key={project+tech} className="mx-0.5 my-0.5">{tech}</Badge>)}
             </CardFooter>
           </Card>
         ))}
