@@ -6,9 +6,9 @@ import projects from "@/constants/projects";
 const Projects = () => {
   return (
     <Layout>
-      <div className="grid grid-cols-2">
+      <div className="grid sm:grid-cols-2">
         {projects.map(project => (
-          <Card className="bg-chart-2 odd:mr-5 even:ml-5 my-5 cursor-pointer">
+          <Card className="bg-chart-2 mx-5 sm:odd:mr-5 sm:even:ml-5 my-5 cursor-pointer">
             <CardHeader>{project.title}</CardHeader>
             <hr className="mx-6" />
             <CardContent>
