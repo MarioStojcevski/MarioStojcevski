@@ -1,26 +1,28 @@
+import clsx from "clsx";
+
 type AsciArtProps = {
   art: string;
+  colorIndex: number;
 };
 
-export default function AsciArt({ art }: AsciArtProps) {
+export default function AsciArt({ art, colorIndex }: AsciArtProps) {
   const lines = art.trim().split("\n");
 
   return (
-    <div className=""
+    <div
       style={{
-        height: "100vh",
+        height: "40vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-
       }}
     >
-      <pre className="whitespace-pre-wrap leading-none">
+      <pre className={clsx(`text-chart-${colorIndex}`, "whitespace-pre-wrap leading-none")}>
         {lines.map((line, i) => (
           <div key={line + i}>
             {line.split("").map((ch, j) => {
-              if (ch === " ") return <span key={line + j}>&nbsp;</span>;
-              return <span className="text-chart-1" key={line + ch + j}>{ch}</span>
+              if (ch === " ") return <span key={line + ch + j}>&nbsp;</span>;
+              return <span key={line + ch + j}>{ch}</span>
             })}
           </div>
         ))}

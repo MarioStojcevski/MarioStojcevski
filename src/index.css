@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Syne:wght@400..800&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
+
+body {
+  font-family: 'Sora', sans-serif;
+}
 
 @custom-variant dark (&:is(.dark *));
 

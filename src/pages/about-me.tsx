@@ -3,7 +3,7 @@ import Layout from "@/components/layout";
 const AboutMe = () => {
   return (
     <Layout>
-      I promise i will fix this today
+      A day will come when this section will be completed.
     </Layout>
   );
 };

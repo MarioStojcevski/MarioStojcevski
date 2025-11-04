@@ -7,7 +7,7 @@ import { NavLink } from "react-router";
 
 const Navigation = () => { 
   return (
-    <NavigationMenu className="z-5">
+    <NavigationMenu className="z-5 h-20">
       <NavigationMenuList>
         <NavLink to="/" className={navigationMenuTriggerStyle()}>
           <img width={25} src="./logo.png" />
