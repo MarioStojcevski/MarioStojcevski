@@ -2,7 +2,6 @@ import Layout from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import projects from "@/constants/projects";
-import clsx from "clsx";
 
 const Projects = () => {
   return (
@@ -11,8 +10,8 @@ const Projects = () => {
         {projects.map(project => (
           <Card 
             key={project.title} 
-            className={clsx(`bg-chart-${Math.floor(Math.random() * 5) + 1}`,`cursor-pointer odd:border-r odd:border-b-0 even:border-b-0 
-            first:rounded-tl-lg nth-[2]:rounded-tr-lg nth-last-[2]:rounded-bl-lg last:rounded-br-lg`)}>
+            className={`bg-chart-2 cursor-pointer odd:border-r odd:border-b-0 even:border-b-0 
+            first:rounded-tl-lg nth-[2]:rounded-tr-lg nth-last-[2]:rounded-bl-lg last:rounded-br-lg`}>
             <CardHeader className="text-2xl">
               {project.title}
             </CardHeader>
