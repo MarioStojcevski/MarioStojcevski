@@ -3,7 +3,7 @@ import Layout from "@/components/layout";
 const AboutMe = () => {
   return (
     <Layout>
-      Nothing to see here.
+      I promise i will fix this today
     </Layout>
   );
 };
