@@ -5,4 +5,8 @@ export type Project = {
   technologies: string[];
   url?: string;
   image?: string;
+  year?: string;
+  status?: "Completed" | "In Progress" | "On Hold";
+  client?: string;
+  highlights?: string[];
 };

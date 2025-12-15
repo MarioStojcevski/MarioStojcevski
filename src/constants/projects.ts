@@ -20,7 +20,14 @@ const projects: Project[] = [
       "Remotion",
       "PostgreSQL"
     ],
-    image: "https://i.pinimg.com/1200x/8f/c2/45/8fc245476a4b87259cb923fe9f0b2439.jpg"
+    image: "https://i.pinimg.com/1200x/8f/c2/45/8fc245476a4b87259cb923fe9f0b2439.jpg",
+    year: "2023",
+    status: "Completed",
+    highlights: [
+      "Real-time video rendering with Remotion",
+      "Serverless architecture reducing costs by 60%",
+      "Template-based editing system for non-technical users"
+    ]
   },
   {
     title: "Image Standardization Tool",
@@ -38,7 +45,14 @@ const projects: Project[] = [
       "AWS CloudFront",
       "Docker"
     ],
-    image: "https://i.pinimg.com/736x/34/e8/43/34e84361c908d4efe592cc659db69619.jpg"
+    image: "https://i.pinimg.com/736x/34/e8/43/34e84361c908d4efe592cc659db69619.jpg",
+    year: "2023",
+    status: "Completed",
+    highlights: [
+      "Automated image processing pipeline",
+      "Multi-platform API integration",
+      "Batch processing capabilities"
+    ]
   },
   {
     title: "Modular CRM System",
@@ -53,7 +67,14 @@ const projects: Project[] = [
       "NodeJS",
       "PostgreSQL"
     ],
-    image: "https://i.pinimg.com/736x/b2/e7/80/b2e780e5063d954a1c016a6623627ecf.jpg"
+    image: "https://i.pinimg.com/736x/b2/e7/80/b2e780e5063d954a1c016a6623627ecf.jpg",
+    year: "2022",
+    status: "Completed",
+    highlights: [
+      "Modular architecture for easy customization",
+      "Mobile-first responsive design",
+      "Resume builder with export functionality"
+    ]
   },
   {
     title: "Student Registration System",
@@ -67,7 +88,15 @@ const projects: Project[] = [
       "Java Spring",
       "PostgreSQL"
     ],
-    image: "https://i.pinimg.com/736x/ff/f3/74/fff37403b5f35cc7d87dc86b2cdcd9e4.jpg"
+    image: "https://i.pinimg.com/736x/ff/f3/74/fff37403b5f35cc7d87dc86b2cdcd9e4.jpg",
+    year: "2021",
+    status: "Completed",
+    client: "Government Institution",
+    highlights: [
+      "Handles thousands of student registrations",
+      "Automated form processing",
+      "Secure data storage and reporting"
+    ]
   },
   {
     title: "LinkedIn Profile Scraper Extension",
@@ -130,7 +159,14 @@ const projects: Project[] = [
       "CSS"
     ],
     url: "http://mariostojcevski.com/",
-    image: "https://i.pinimg.com/1200x/2b/27/38/2b273887b6df3de4a38567a68be61cbf.jpg"
+    image: "https://i.pinimg.com/1200x/2b/27/38/2b273887b6df3de4a38567a68be61cbf.jpg",
+    year: "2024",
+    status: "Completed",
+    highlights: [
+      "Neobrutalism design aesthetic",
+      "Responsive and performant",
+      "Showcases multiple creative disciplines"
+    ]
   },
   {
     title: "Deep Learning Research for Accessibility",
