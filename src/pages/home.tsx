@@ -161,9 +161,9 @@ const Home = () => {
               All Projects
             </Badge>
           </Link>
-          <Link to="/art">
+          <Link to="/games">
             <Badge className="text-base px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition-all">
-              Art & Creative
+              Games
             </Badge>
           </Link>
           <Link to="/about-me">

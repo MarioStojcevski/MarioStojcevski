@@ -40,13 +40,13 @@ const Navigation = () => {
         </li>
         <li>
           <NavLink 
-            to="/art" 
+            to="/games" 
             className={({ isActive }) => cn(
               "inline-flex h-10 items-center justify-center px-4 py-2 text-base font-bold border-2 border-black bg-main text-main-foreground rounded-base transition-all hover:bg-black hover:text-white",
               isActive && "bg-black text-white"
             )}
           >
-            Art
+            Games
           </NavLink>
         </li>
       </ul>

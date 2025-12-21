@@ -4,7 +4,7 @@ import { HashRouter, Route, Routes } from "react-router";
 
 import AboutMe from './pages/about-me';
 import Projects from './pages/projects';
-import Art from './pages/art';
+import Games from './pages/games';
 import Home from './pages/home';
 
 createRoot(document.getElementById('root')!).render(
@@ -14,7 +14,7 @@ createRoot(document.getElementById('root')!).render(
         <Route index element={<Home />} />
         <Route path='about-me' element={<AboutMe />} />
         <Route path='projects' element={<Projects />} />
-        <Route path='art' element={<Art />} />
+        <Route path='games' element={<Games />} />
       </Routes>
     </HashRouter>
   </StrictMode>,
