@@ -6,6 +6,7 @@ import AboutMe from './pages/about-me';
 import Projects from './pages/projects';
 import Games from './pages/games';
 import Home from './pages/home';
+import Community from './pages/community';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path='about-me' element={<AboutMe />} />
         <Route path='projects' element={<Projects />} />
         <Route path='games' element={<Games />} />
+        <Route path='community' element={<Community />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

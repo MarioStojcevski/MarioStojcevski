@@ -5,56 +5,21 @@ import { Badge } from "@/components/ui/badge";
 const AboutMe = () => {
   return (
     <Layout>
-      <div className="max-w-4xl">
+      <div className="w-full">
         <h1 className="text-5xl lg:text-6xl font-bold text-chart-5 mb-8">
           About Me
         </h1>
 
         <div className="space-y-8 mb-12">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Who I Am</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              I'm Mario Stojcevski, a Software Engineer passionate about building robust and scalable 
-              applications. I've been working at CodeChem since August 2022, where I contribute to 
-              exciting projects that challenge me and help me grow as a developer.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed mt-4">
-              I hold a Bachelor's degree in Computer Software Engineering from the Faculty of Computer 
-              Science and Engineering in Skopje, and I had the opportunity to participate in the 
-              ERASMUS+ program at Mälardalen University in Sweden in 2021, which broadened my 
-              perspective on software engineering and international collaboration.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-bold mb-4">My Journey</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              My professional journey has taken me through various roles and technologies. Before joining 
-              CodeChem, I worked at Inteligenta from December 2021 to August 2022, focusing on projects 
-              like e-uslugi. Prior to that, I was a Machine Learning Developer at Loka, Inc. in early 2021, 
-              where I specialized in natural language processing to classify restaurant reviews.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              I also worked as a Full Stack Developer at MCA.mk in late 2020, contributing to the UK-based 
-              BidWork project, which enhanced communication within the construction industry.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              I specialize in full-stack development, working with modern technologies like React, 
-              Next.js, Node.js, and various cloud services. I enjoy architecting systems, solving 
-              complex problems, and turning ideas into reality through code. Beyond development, I'm 
-              also involved in research, particularly in the field of Deep Learning, where I've published 
-              papers addressing solutions for aiding the mobility of individuals with disabilities.
-            </p>
-          </div>
 
           <div>
             <h2 className="text-3xl font-bold mb-4">My Passions</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-chart-1 border-2 border-black">
+              <Card className="bg-chart-5 border-2 border-black">
                 <CardHeader>
                   <h3 className="text-xl font-bold">🏔️ Hiking</h3>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pb-8">
                   <p className="text-gray-700">
                     I love exploring nature trails and mountains. There's something peaceful 
                     about being in nature that helps me recharge and find inspiration.
@@ -66,7 +31,7 @@ const AboutMe = () => {
                 <CardHeader>
                   <h3 className="text-xl font-bold">🧗 Rock Climbing</h3>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pb-8">
                   <p className="text-gray-700">
                     Rock climbing challenges me both physically and mentally. It teaches 
                     problem-solving, patience, and pushing beyond limits.
@@ -78,7 +43,7 @@ const AboutMe = () => {
                 <CardHeader>
                   <h3 className="text-xl font-bold">🚴 Cycling</h3>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pb-8">
                   <p className="text-gray-700">
                     Whether it's road cycling or mountain biking, I enjoy the freedom and 
                     adventure that comes with exploring on two wheels.
@@ -113,13 +78,14 @@ const AboutMe = () => {
                 href="https://www.linkedin.com/in/mariostojcevski" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="cursor-pointer"
               >
-                <Badge className="text-base px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition-all">
+                <Badge className="text-base px-4 py-2 cursor-pointer bg-[#0077B5] text-white border-[#0077B5] hover:bg-[#005885] hover:border-[#005885] transition-all">
                   LinkedIn
                 </Badge>
               </a>
-              <a href="mailto:mariostojcevski@gmail.com">
-                <Badge className="text-base px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition-all">
+              <a href="mailto:mariostojcevski@gmail.com" className="cursor-pointer">
+                <Badge className="text-base px-4 py-2 cursor-pointer bg-pink-500 text-white border-pink-500 hover:bg-pink-600 hover:border-pink-600 transition-all">
                   Email
                 </Badge>
               </a>

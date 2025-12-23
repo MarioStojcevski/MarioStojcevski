@@ -18,23 +18,14 @@ const Home = () => {
             <h1 className="text-6xl lg:text-7xl font-bold text-chart-5 mb-2">
               Mario Stojcevski
             </h1>
-            <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 mb-6 flex items-center gap-2 flex-wrap">
-              <span>Software Engineer at</span>
-              <a 
-                href="https://codechem.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 hover:underline"
-              >
-                <img className="inline-block align-middle" width={32} height={32} src="./cc.svg" alt="CodeChem" />
-                <span className="align-middle">CodeChem</span>
-              </a>
+            <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 mb-6">
+              Software Engineer
             </h2>
           </div>
 
           <div className="space-y-4 text-lg text-gray-700 mb-8">
             <p>
-              Welcome to <span className="text-chart-2 font-bold">mariostojcevski.com</span>! 🎉
+              Welcome to <span className="inline-block align-middle min-w-[180px] text-center"><Link to="/" className="text-chart-5 font-bold hover:text-chart-5/80 inline-block cursor-pointer transition-colors hover:animate-[spin-pop_0.6s_ease-in-out_1] transform-origin-center">mariostojcevski.com</Link></span>! 🎉
             </p>
             <p>
               I build web applications, design systems, and create digital experiences. 
@@ -50,18 +41,19 @@ const Home = () => {
           </div>
 
           <div className="flex flex-wrap gap-4 mt-8">
-            <Link to="/projects">
+            <Link to="/projects" className="cursor-pointer">
               <Button>View Projects</Button>
             </Link>
-            <Link to="/about-me">
-              <Button variant="outline">About Me</Button>
+            <Link to="/about-me" className="cursor-pointer">
+              <Button variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700">About Me</Button>
             </Link>
             <a 
               href="https://www.linkedin.com/in/mariostojcevski" 
               target="_blank" 
               rel="noopener noreferrer"
+              className="cursor-pointer"
             >
-              <Button variant="outline" className="inline-flex items-center gap-2">
+              <Button variant="outline" className="inline-flex items-center gap-2 bg-[#0077B5] text-white border-[#0077B5] hover:bg-[#005885] hover:border-[#005885]">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="18" 
@@ -79,8 +71,9 @@ const Home = () => {
               href="https://github.com/mariostojcevski" 
               target="_blank" 
               rel="noopener noreferrer"
+              className="cursor-pointer"
             >
-              <Button variant="outline" className="inline-flex items-center gap-2">
+              <Button variant="outline" className="inline-flex items-center gap-2 bg-[#24292e] text-white border-[#24292e] hover:bg-[#181717] hover:border-[#181717]">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="18" 
@@ -98,11 +91,11 @@ const Home = () => {
         </div>
 
         <div className="flex-shrink-0 mx-auto lg:mx-0">
-          <div className="border-2 border-black rounded-base p-3 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="rounded-base p-3 bg-transparent">
             <img 
               src="./me.png" 
               alt="Mario Stojcevski" 
-              className="rounded-base w-64 h-auto object-contain block"
+              className="rounded-base w-64 h-auto object-contain block mix-blend-multiply"
             />
           </div>
         </div>
@@ -110,25 +103,25 @@ const Home = () => {
 
       {/* Stats Section */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-        <Card className="bg-chart-1 border-2 border-black text-center">
+        <Card className="bg-chart-1 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}>
           <CardContent className="pt-6 pb-6">
             <div className="text-4xl font-bold mb-2">{totalProjects}+</div>
             <div className="text-sm font-semibold">Projects</div>
           </CardContent>
         </Card>
-        <Card className="bg-chart-2 border-2 border-black text-center">
+        <Card className="bg-chart-2 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '0.5s' }}>
           <CardContent className="pt-6 pb-6">
             <div className="text-4xl font-bold mb-2">5+</div>
             <div className="text-sm font-semibold">Years Experience</div>
           </CardContent>
         </Card>
-        <Card className="bg-chart-3 border-2 border-black text-center">
+        <Card className="bg-chart-3 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '1s' }}>
           <CardContent className="pt-6 pb-6">
             <div className="text-4xl font-bold mb-2">10+</div>
             <div className="text-sm font-semibold">Technologies</div>
           </CardContent>
         </Card>
-        <Card className="bg-chart-4 border-2 border-black text-center">
+        <Card className="bg-chart-4 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '1.5s' }}>
           <CardContent className="pt-6 pb-6">
             <div className="text-4xl font-bold mb-2">∞</div>
             <div className="text-sm font-semibold">Passion</div>
@@ -140,21 +133,25 @@ const Home = () => {
       <div className="mb-16">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-4xl font-bold">Featured Projects</h2>
-          <Link to="/projects">
-            <Button variant="outline">View All →</Button>
+          <Link to="/projects" className="cursor-pointer">
+            <Button variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700">View All →</Button>
           </Link>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-          {featuredProjects.map((project) => (
-            <Link key={project.title} to="/projects">
-              <Card className="bg-chart-2 border-2 border-black cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 h-full">
+          {featuredProjects.map((project, index) => {
+            const colors = ['bg-chart-5', 'bg-chart-4', 'bg-chart-3'];
+            const colorClass = colors[index % colors.length];
+            const projectSlug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+            return (
+            <Link key={project.title} to={`/projects#${projectSlug}`} className="cursor-pointer">
+              <Card className={`${colorClass} border-2 border-black cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 h-full`}>
                 <CardContent className="p-0">
                   {project.image && (
-                    <div className="w-full h-40 overflow-hidden border-b-2 border-black">
+                    <div className="w-full h-40 overflow-hidden border-b-2 border-black rounded-t-base">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-t-base"
                       />
                     </div>
                   )}
@@ -165,12 +162,12 @@ const Home = () => {
                     </p>
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                        <Badge key={tech} className="text-xs bg-chart-1 text-black">
                           {tech}
                         </Badge>
                       ))}
                       {project.technologies.length > 3 && (
-                        <Badge variant="outline" className="text-xs">
+                        <Badge className="text-xs bg-chart-1 text-black">
                           +{project.technologies.length - 3}
                         </Badge>
                       )}
@@ -179,7 +176,8 @@ const Home = () => {
                 </CardContent>
               </Card>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -187,21 +185,24 @@ const Home = () => {
       <div className="border-2 border-black rounded-base bg-main p-6">
         <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
         <div className="flex flex-wrap gap-4">
-          <Link to="/projects">
-            <Badge className="text-base px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition-all">
+          <Link to="/projects" className="cursor-pointer">
+            <Badge className="text-base px-4 py-2 cursor-pointer bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all">
               All Projects
             </Badge>
           </Link>
-          <Link to="/games">
-            <Badge className="text-base px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition-all">
+          <Link to="/games" className="cursor-pointer">
+            <Badge className="text-base px-4 py-2 cursor-pointer bg-chart-5 text-white border-chart-5 hover:bg-chart-5/80 hover:border-chart-5/80 transition-all">
               Games
             </Badge>
           </Link>
-          <Link to="/about-me">
-            <Badge className="text-base px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition-all">
+          <Link to="/about-me" className="cursor-pointer">
+            <Badge className="text-base px-4 py-2 cursor-pointer bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700 transition-all">
               About Me
             </Badge>
           </Link>
+        </div>
+        <div className="mt-6 text-center text-sm text-gray-600">
+          © 2025 mariostojcevski
         </div>
       </div>
     </Layout>
