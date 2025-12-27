@@ -88,7 +88,7 @@ const AboutMe = () => {
               <MultiStemAudioPlayer
                 stems={[
                   { title: "drums", src: "/audio/parking_demo - 0001 - Group - Drums Group.mp3" },
-                  { title: "muzika", src: "/audio/parking_demo - 0006 - Group - Muzika Group.mp3" },
+                  { title: "muzika", src: "/audio/muzika -  - Output - Stereo Out.mp3" },
                   { title: "vokali", src: "/audio/parking_demo - 0011 - Group - Vocals Group.mp3" },
                   { title: "DOBACKII", src: "/audio/parking_demo - 0012 - Group - DOBACKI  Group.mp3" },
                   { title: "Chorusche", src: "/audio/parking_demo - 0029 - Group - Chorus Group.mp3" },
