@@ -87,10 +87,11 @@ const AboutMe = () => {
               </p>
               <MultiStemAudioPlayer
                 stems={[
-                  { title: "Track 1", src: "./music/track1.mp3" },
-                  { title: "Track 2", src: "./music/track2.mp3" },
-                  { title: "Track 3", src: "./music/track3.mp3" },
-                  { title: "Track 4", src: "./music/track4.mp3" },
+                  { title: "drums", src: "/audio/parking_demo - 0001 - Group - Drums Group.mp3" },
+                  { title: "muzika", src: "/audio/parking_demo - 0006 - Group - Muzika Group.mp3" },
+                  { title: "vokali", src: "/audio/parking_demo - 0011 - Group - Vocals Group.mp3" },
+                  { title: "DOBACKII", src: "/audio/parking_demo - 0012 - Group - DOBACKI  Group.mp3" },
+                  { title: "Chorusche", src: "/audio/parking_demo - 0029 - Group - Chorus Group.mp3" },
                 ]}
               />
             </div>

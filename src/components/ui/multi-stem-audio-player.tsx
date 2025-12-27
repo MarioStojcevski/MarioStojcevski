@@ -168,20 +168,41 @@ function MultiStemAudioPlayer({ stems, className }: MultiStemAudioPlayerProps) {
     };
   }, [draggingIndex]);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     const audioElements = audioRefs.current.filter(
-      (audio): audio is HTMLAudioElement => audio !== null
+      (audio): audio is HTMLAudioElement => audio !== null && audio.src
     );
+    
+    if (audioElements.length === 0) {
+      return;
+    }
     
     if (isPlaying) {
       audioElements.forEach((audio) => audio.pause());
+      setIsPlaying(false);
     } else {
+      // Set current time for all elements
       audioElements.forEach((audio) => {
-        audio.currentTime = currentTime;
-        audio.play();
+        if (!isNaN(audio.duration)) {
+          audio.currentTime = Math.min(currentTime, audio.duration);
+        }
       });
+      
+      // Play all audio elements
+      try {
+        const playPromises = audioElements.map((audio) => {
+          return audio.play().catch(() => {
+            // Individual audio play failed, but continue with others
+          });
+        });
+        
+        await Promise.allSettled(playPromises);
+        setIsPlaying(true);
+      } catch (error) {
+        // If all fail, still set playing state
+        setIsPlaying(true);
+      }
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -380,7 +401,7 @@ function MultiStemAudioPlayer({ stems, className }: MultiStemAudioPlayerProps) {
                       audioRefs.current[index] = el;
                     }}
                     src={stem.src}
-                    preload="metadata"
+                    preload="auto"
                   />
                   
                   {/* Volume Bar */}
