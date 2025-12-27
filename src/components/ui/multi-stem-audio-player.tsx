@@ -170,7 +170,7 @@ function MultiStemAudioPlayer({ stems, className }: MultiStemAudioPlayerProps) {
 
   const togglePlay = async () => {
     const audioElements = audioRefs.current.filter(
-      (audio): audio is HTMLAudioElement => audio !== null && audio.src
+      (audio): audio is HTMLAudioElement => audio !== null && audio.src !== ''
     );
     
     if (audioElements.length === 0) {
