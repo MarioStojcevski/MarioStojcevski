@@ -4,6 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { speakingEvents, workshops } from "@/constants/community";
 
 const Community = () => {
+  const getLocationUrl = (location: string) => {
+    return `https://www.google.com/maps/search/${encodeURIComponent(location)}`;
+  };
+
   return (
     <Layout>
       <div className="space-y-8">
@@ -20,32 +24,51 @@ const Community = () => {
           {speakingEvents.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2">
               {speakingEvents.map((event, index) => (
-                <Card key={index} className="border-2 border-black">
+                <Card key={index} className="bg-white border-2 border-black cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 active:translate-x-0 active:translate-y-0">
+                  {event.image && (
+                    <div className="w-full h-48 overflow-hidden border-b-2 border-black rounded-t-base">
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <h3 className="text-2xl font-bold">{event.title}</h3>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
+                  <CardContent className="pb-6">
+                    <div className="flex flex-wrap gap-2">
                       {event.date && (
-                        <Badge variant="outline">{event.date}</Badge>
+                        <Badge variant="outline" className="bg-white">{event.date}</Badge>
                       )}
                       {event.location && (
-                        <Badge variant="outline">{event.location}</Badge>
-                      )}
-                      {event.type && (
-                        <Badge>{event.type}</Badge>
+                        <a
+                          href={getLocationUrl(event.location)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          <Badge variant="outline" className="bg-chart-1 text-black hover:opacity-80 transition-opacity">
+                            {event.location}
+                          </Badge>
+                        </a>
                       )}
                     </div>
                     {event.description && (
                       <p className="mt-4 text-gray-700">{event.description}</p>
                     )}
-                    {event.topic && (
+                    {event.topics && event.topics.length > 0 && (
                       <div className="mt-4">
-                        <p className="font-semibold mb-2">Topic:</p>
-                        <p className="text-gray-700">{event.topic}</p>
+                        <p className="font-semibold mb-2">Topics Covered:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {event.topics.map((topic, i) => (
+                            <Badge key={i} variant="outline">{topic}</Badge>
+                          ))}
+                        </div>
                       </div>
                     )}
-                    {event.url && (
+                    {event.url ? (
                       <a
                         href={event.url}
                         target="_blank"
@@ -54,6 +77,10 @@ const Community = () => {
                       >
                         Learn more →
                       </a>
+                    ) : (
+                      <span className="mt-4 inline-block text-gray-400 cursor-default">
+                        Learn more →
+                      </span>
                     )}
                   </CardContent>
                 </Card>
@@ -74,20 +101,35 @@ const Community = () => {
           {workshops.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2">
               {workshops.map((workshop, index) => (
-                <Card key={index} className="border-2 border-black">
+                <Card key={index} className="bg-white border-2 border-black cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 active:translate-x-0 active:translate-y-0">
+                  {workshop.image && (
+                    <div className="w-full h-48 overflow-hidden border-b-2 border-black rounded-t-base">
+                      <img
+                        src={workshop.image}
+                        alt={workshop.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <h3 className="text-2xl font-bold">{workshop.title}</h3>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
+                  <CardContent className="pb-6">
+                    <div className="flex flex-wrap gap-2">
                       {workshop.date && (
-                        <Badge variant="outline">{workshop.date}</Badge>
+                        <Badge variant="outline" className="bg-white">{workshop.date}</Badge>
                       )}
                       {workshop.location && (
-                        <Badge variant="outline">{workshop.location}</Badge>
-                      )}
-                      {workshop.type && (
-                        <Badge>{workshop.type}</Badge>
+                        <a
+                          href={getLocationUrl(workshop.location)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          <Badge variant="outline" className="bg-chart-1 text-black hover:opacity-80 transition-opacity">
+                            {workshop.location}
+                          </Badge>
+                        </a>
                       )}
                     </div>
                     {workshop.description && (
@@ -103,7 +145,7 @@ const Community = () => {
                         </div>
                       </div>
                     )}
-                    {workshop.url && (
+                    {workshop.url ? (
                       <a
                         href={workshop.url}
                         target="_blank"
@@ -112,6 +154,10 @@ const Community = () => {
                       >
                         Learn more →
                       </a>
+                    ) : (
+                      <span className="mt-4 inline-block text-gray-400 cursor-default">
+                        Learn more →
+                      </span>
                     )}
                   </CardContent>
                 </Card>

@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { MultiStemAudioPlayer } from "@/components/ui/multi-stem-audio-player";
 
 const AboutMe = () => {
   return (
@@ -61,11 +62,38 @@ const AboutMe = () => {
               problem-solving isn't just about code—it's about approaching challenges with 
               creativity and determination.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              I also enjoy exploring various art forms, engaging in social activities, and creative 
-              endeavors like music production and programming projects that combine my technical 
-              skills with artistic expression.
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              I'm also an audio engineer actively making music, mostly boom bap hip hop and experimental electronic music. 
+              Music production allows me to combine my technical skills with artistic expression, creating 
+              something that resonates on a different level than code.
             </p>
+            
+            <div className="mt-6">
+              <h3 className="text-2xl font-bold mb-4">Music</h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                I'm also a certified audio engineer from{" "}
+                <a
+                  href="https://www.google.com/maps/search/DNS+Production+Skopje"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline cursor-pointer"
+                >
+                  DNS Production Skopje
+                </a>
+                .
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Here's one of many projects I worked on
+              </p>
+              <MultiStemAudioPlayer
+                stems={[
+                  { title: "Track 1", src: "./music/track1.mp3" },
+                  { title: "Track 2", src: "./music/track2.mp3" },
+                  { title: "Track 3", src: "./music/track3.mp3" },
+                  { title: "Track 4", src: "./music/track4.mp3" },
+                ]}
+              />
+            </div>
           </div>
 
           <div className="border-2 border-black rounded-base bg-main p-6">
@@ -82,6 +110,16 @@ const AboutMe = () => {
               >
                 <Badge className="text-base px-4 py-2 cursor-pointer bg-[#0077B5] text-white border-[#0077B5] hover:bg-[#005885] hover:border-[#005885] transition-all">
                   LinkedIn
+                </Badge>
+              </a>
+              <a 
+                href="https://github.com/mariostojcevski" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cursor-pointer"
+              >
+                <Badge className="text-base px-4 py-2 cursor-pointer bg-[#24292e] text-white border-[#24292e] hover:bg-[#181717] hover:border-[#181717] transition-all">
+                  GitHub
                 </Badge>
               </a>
               <a href="mailto:mariostojcevski@gmail.com" className="cursor-pointer">

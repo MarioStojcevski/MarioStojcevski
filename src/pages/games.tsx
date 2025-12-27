@@ -24,6 +24,12 @@ const games: Game[] = [
     description: "A memory card matching game built with Phaser3.",
     color: "bg-chart-3",
   },
+  {
+    title: "TABLA_BAKI - Backgammon Game",
+    url: "https://github.com/mihailDamchevski/TABLA_BAKI",
+    description: "A Backgammon game project currently in development. TABLA_BAKI will be a digital implementation of the classic board game Backgammon, built with Python. The project aims to provide an engaging gaming experience with traditional Backgammon rules and gameplay mechanics.",
+    color: "bg-chart-4",
+  },
 ];
 
 const Games = () => {

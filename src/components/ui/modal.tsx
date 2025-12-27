@@ -40,12 +40,12 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 cursor-pointer animate-[modal-fade-in_0.3s_ease-out]"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-[modal-fade-in_0.3s_ease-out]"
       onClick={onClose}
     >
       <div
         className={cn(
-          "relative w-full max-w-3xl max-h-[90vh] overflow-y-auto custom-scrollbar",
+          "relative w-full max-w-3xl max-h-[90vh] overflow-y-auto",
           "bg-white border-2 border-black rounded-base p-6",
           "shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]",
           "animate-[modal-slide-up_0.4s_ease-out]"
@@ -55,8 +55,8 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
         <button
           onClick={onClose}
           className={cn(
-            "absolute top-4 right-4 w-8 h-8",
-            "flex items-center justify-center",
+            "absolute top-4 right-4 w-8 h-8 z-30",
+            "hidden sm:flex items-center justify-center",
             "border-2 border-black rounded-base",
             "bg-white hover:bg-black hover:text-white",
             "font-bold text-lg transition-all cursor-pointer"
@@ -93,7 +93,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         {project.image && (
-          <div className="w-full h-64 overflow-hidden border-2 border-black rounded-base animate-[fade-in-up_0.5s_ease-out_0.1s_both]">
+          <div className="w-full h-64 overflow-hidden border-2 border-black rounded-base animate-[fade-in-up_0.5s_ease-out_0.1s_both] relative z-10">
             <img
               src={project.image}
               alt={project.title}
@@ -103,12 +103,35 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
         )}
 
         <div className="animate-[fade-in-up_0.5s_ease-out_0.2s_both]">
-          <div className="flex items-start justify-between gap-4 mb-2">
-            <h2 className="text-4xl font-bold flex-1">{project.title}</h2>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-2">
+            <h2 className="text-2xl sm:text-4xl font-bold flex-1">{project.title}</h2>
+            {project.url && (
+              <div className="flex items-center gap-2 shrink-0 sm:hidden">
+                <Button
+                  onClick={() => window.open(project.url, "_blank")}
+                  className="shrink-0"
+                >
+                  Open in New Tab →
+                </Button>
+                <button
+                  onClick={onClose}
+                  className={cn(
+                    "w-8 h-8",
+                    "flex items-center justify-center",
+                    "border-2 border-black rounded-base",
+                    "bg-white hover:bg-black hover:text-white",
+                    "font-bold text-lg transition-all cursor-pointer"
+                  )}
+                  aria-label="Close modal"
+                >
+                  ×
+                </button>
+              </div>
+            )}
             {project.url && (
               <Button
                 onClick={() => window.open(project.url, "_blank")}
-                className="shrink-0"
+                className="shrink-0 hidden sm:inline-flex"
               >
                 Open in New Tab →
               </Button>
@@ -239,9 +262,12 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
         )}
       >
         <div className="flex flex-col h-full space-y-4">
-          <div className="flex items-start justify-between gap-4 shrink-0">
-            <h2 className="text-4xl font-bold flex-1">{game.title}</h2>
-            <div className="flex items-center gap-2 shrink-0">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 shrink-0">
+            <h2 className="text-2xl sm:text-4xl font-bold flex-1">{game.title}</h2>
+            {game.description && (
+              <p className="text-gray-700 shrink-0 sm:hidden">{game.description}</p>
+            )}
+            <div className="flex items-center gap-2 shrink-0 sm:hidden">
               <Button
                 onClick={() => window.open(game.url, "_blank")}
                 className="cursor-pointer"
@@ -251,7 +277,28 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <button
                 onClick={onClose}
                 className={cn(
-                  "w-8 h-8",
+                  "w-8 h-8 z-30 relative",
+                  "flex items-center justify-center",
+                  "border-2 border-black rounded-base",
+                  "bg-white hover:bg-black hover:text-white",
+                  "font-bold text-lg transition-all cursor-pointer"
+                )}
+                aria-label="Close modal"
+              >
+                ×
+              </button>
+            </div>
+            <div className="hidden sm:flex items-center gap-2 shrink-0">
+              <Button
+                onClick={() => window.open(game.url, "_blank")}
+                className="cursor-pointer"
+              >
+                Open in New Tab →
+              </Button>
+              <button
+                onClick={onClose}
+                className={cn(
+                  "w-8 h-8 z-30 relative",
                   "flex items-center justify-center",
                   "border-2 border-black rounded-base",
                   "bg-white hover:bg-black hover:text-white",
@@ -264,7 +311,7 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
             </div>
           </div>
           {game.description && (
-            <p className="text-gray-700 shrink-0">{game.description}</p>
+            <p className="text-gray-700 shrink-0 hidden sm:block">{game.description}</p>
           )}
           <div className="w-full flex-1 min-h-0 border-2 border-black rounded-base overflow-hidden">
             <iframe

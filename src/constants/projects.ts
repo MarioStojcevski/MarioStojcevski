@@ -264,26 +264,6 @@ const projects: Project[] = [
     url: "https://proceedings.ictinnovations.org/authors/821/mario-stojchevski"
   },
   {
-    title: "TABLA_BAKI - Backgammon Game",
-    description: "A Backgammon game project currently in development. TABLA_BAKI will be a digital implementation of the classic board game Backgammon, built with Python. The project aims to provide an engaging gaming experience with traditional Backgammon rules and gameplay mechanics.",
-    responsibilities: [
-      "Development"
-    ],
-    technologies: [
-      "Python"
-    ],
-    image: "https://i.pinimg.com/736x/82/2c/fb/822cfb28176afc20a0a0743baf99e7e9.jpg",
-    year: "2025",
-    status: "In Progress",
-    url: "https://github.com/mihailDamchevski/TABLA_BAKI",
-    highlights: [
-      "Digital Backgammon game implementation",
-      "Python-based development",
-      "Traditional game rules and mechanics",
-      "Collaborative project development"
-    ]
-  },
-  {
     title: "Nekasveti - Chemical Cleaning Services",
     description: "A family project website for a chemical cleaning services business. Built with TypeScript and modern web technologies to provide an online presence for the cleaning services company, showcasing services, contact information, and business details.",
     responsibilities: [
