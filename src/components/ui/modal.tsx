@@ -1,4 +1,5 @@
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 import { Badge } from "./badge";
 import { Button } from "./button";
@@ -38,9 +39,9 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-[modal-fade-in_0.3s_ease-out]"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 animate-[modal-fade-in_0.3s_ease-out]"
       onClick={onClose}
     >
       <div
@@ -55,7 +56,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
         <button
           onClick={onClose}
           className={cn(
-            "absolute top-4 right-4 w-8 h-8 z-30",
+            "absolute top-4 right-4 w-8 h-8 z-[110]",
             "hidden sm:flex items-center justify-center",
             "border-2 border-black rounded-base",
             "bg-white hover:bg-black hover:text-white",
@@ -69,6 +70,8 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
 
 interface ProjectModalProps {
@@ -220,6 +223,15 @@ interface GameModalProps {
 }
 
 function GameModal({ game, isOpen, onClose }: GameModalProps) {
+  const getEmbedUrl = (url: string): string => {
+    const youtubeRegex = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/;
+    const match = url.match(youtubeRegex);
+    if (match) {
+      return `https://www.youtube.com/embed/${match[1]}`;
+    }
+    return url;
+  };
+
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -248,9 +260,9 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-[modal-fade-in_0.3s_ease-out]"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 animate-[modal-fade-in_0.3s_ease-out]"
     >
       <div
         className={cn(
@@ -277,7 +289,7 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <button
                 onClick={onClose}
                 className={cn(
-                  "w-8 h-8 z-30 relative",
+                  "w-8 h-8 z-[110] relative",
                   "flex items-center justify-center",
                   "border-2 border-black rounded-base",
                   "bg-white hover:bg-black hover:text-white",
@@ -298,7 +310,7 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <button
                 onClick={onClose}
                 className={cn(
-                  "w-8 h-8 z-30 relative",
+                  "w-8 h-8 z-[110] relative",
                   "flex items-center justify-center",
                   "border-2 border-black rounded-base",
                   "bg-white hover:bg-black hover:text-white",
@@ -315,16 +327,18 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
           )}
           <div className="w-full flex-1 min-h-0 border-2 border-black rounded-base overflow-hidden">
             <iframe
-              src={game.url}
+              src={getEmbedUrl(game.url)}
               className="w-full h-full border-0"
               title={game.title}
-              allow="gamepad; fullscreen"
+              allow="gamepad; fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture"
             />
           </div>
         </div>
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
 
 export { Modal, ProjectModal, GameModal };

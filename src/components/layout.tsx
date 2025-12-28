@@ -5,7 +5,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="mx-5 my-5 md:mx-20 md:my-5 lg:mx-40 lg:my-10 xl:mx-40 xl:my-10 relative">
       <OrangeBlobs />
-      <div className="relative z-[60]">
+      <div className="relative z-40">
         <Navigation />
       </div>
       <main className="py-8 relative z-10">{children}</main>

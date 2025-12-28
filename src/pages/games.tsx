@@ -3,34 +3,9 @@ import Layout from "@/components/layout";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GameModal } from "@/components/ui/modal";
-
-interface Game {
-  title: string;
-  url: string;
-  description?: string;
-  color: string;
-}
-
-const games: Game[] = [
-  {
-    title: "GTA San Andreas Mini Game",
-    url: "https://mariostojcevski.github.io/gta-san-andreas-mini-game/",
-    description: "A mini game inspired by GTA San Andreas. Fuuull of bugs!",
-    color: "bg-chart-2",
-  },
-  {
-    title: "Phaser3 Memory Game",
-    url: "https://mariostojcevski.github.io/phaser3-memory-game/",
-    description: "A memory card matching game built with Phaser3.",
-    color: "bg-chart-3",
-  },
-  {
-    title: "TABLA_BAKI - Backgammon Game",
-    url: "https://github.com/mihailDamchevski/TABLA_BAKI",
-    description: "A Backgammon game project currently in development. TABLA_BAKI will be a digital implementation of the classic board game Backgammon, built with Python. The project aims to provide an engaging gaming experience with traditional Backgammon rules and gameplay mechanics.",
-    color: "bg-chart-4",
-  },
-];
+import { games } from "@/constants/games";
+import type { Game } from "@/constants/games";
+import { cardHoverStyles } from "@/lib/styles";
 
 const Games = () => {
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
@@ -58,7 +33,16 @@ const Games = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {games.map((game) => (
-            <Card key={game.title} className={`${game.color} border-2 border-black cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1`}>
+            <Card key={game.title} className={`${game.color} border-2 border-black ${cardHoverStyles}`}>
+              {game.image && (
+                <div className="w-full h-48 overflow-hidden border-b-2 border-black rounded-t-base">
+                  <img
+                    src={game.image}
+                    alt={game.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              )}
               <CardHeader>
                 <h2 className="text-2xl font-bold">{game.title}</h2>
               </CardHeader>

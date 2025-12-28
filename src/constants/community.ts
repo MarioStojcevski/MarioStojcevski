@@ -22,6 +22,16 @@ export interface Workshop {
 
 export const speakingEvents: SpeakingEvent[] = [
   {
+    title: "How to code a Bootloader for an Operating system",
+    date: "2020",
+    location: "Online",
+    type: "Tutorial",
+    description: "Building a fresh boot from scratch in assembly.",
+    topics: ["Assembly", "Bootloader", "Operating System", "Low-level Programming"],
+    url: "https://www.youtube.com/watch?v=hbDj4qqAI3A",
+    image: "./bootloader-2020/operating-system-bootloader.png"
+  },
+  {
     title: "BeerJS Vol. 9 - Game Development",
     date: "2023",
     location: "Public Room Skopje",
@@ -54,12 +64,12 @@ export const speakingEvents: SpeakingEvent[] = [
 
 export const workshops: Workshop[] = [
   {
-    title: "Creative Hub Course",
+    title: "Full React Course",
     date: "2024",
     location: "Creative Hub, Skopje",
     type: "Workshop",
-    description: "Conducted a comprehensive workshop at Creative Hub, teaching modern web development practices and techniques.",
-    topics: ["Web Development", "Frontend", "Best Practices"],
+    description: "A full React course for beginners to advanced developers. We cover the basics of React, how to use it, and how to build a real-world application.",
+    topics: ["React", "JavaScript", "HTML", "CSS"],
     url: "https://creativehub.mk/",
     image: "./creative-hub-course/creative-hub.webp"
   },

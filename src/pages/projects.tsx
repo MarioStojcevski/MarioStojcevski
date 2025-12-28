@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { ProjectModal } from "@/components/ui/modal";
 import projects from "@/constants/projects";
 import type { Project } from "@/types/project";
+import { cardHoverStyles, projectCardColors, createSlug } from "@/lib/styles";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -39,33 +40,37 @@ const Projects = () => {
     <Layout>
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project, index) => {
-          const colors = ['bg-chart-2', 'bg-chart-3', 'bg-chart-4', 'bg-chart-5'];
-          const colorClass = colors[index % colors.length];
-          const projectSlug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+          const colorClass = projectCardColors[index % projectCardColors.length];
+          const projectSlug = createSlug(project.title);
           return (
-          <Card 
-            key={project.title}
-            id={projectSlug}
-            onClick={() => handleCardClick(project)}
-            className={`${colorClass} cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 active:translate-x-0 active:translate-y-0`}>
-            <CardHeader className="text-2xl">
-              {project.title}
-            </CardHeader>
-            <hr className="mx-6 border border-black" />
-            <CardContent>
-              <div className="w-full h-50 overflow-hidden border-2 border-black rounded-base mb-2 mt-4">
-                <img
-                  src={project.image}
-                  alt="Project Image"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              {project.description}
-            </CardContent>
-            <CardFooter className="overflow-x-auto flex flex-wrap">
-              {project.technologies.map(tech => <Badge key={project+tech} className="mx-0.5 my-0.5">{tech}</Badge>)}
-            </CardFooter>
-          </Card>
+            <Card 
+              key={project.title}
+              id={projectSlug}
+              onClick={() => handleCardClick(project)}
+              className={`${colorClass} ${cardHoverStyles}`}
+            >
+              <CardHeader className="text-2xl">
+                {project.title}
+              </CardHeader>
+              <hr className="mx-6 border border-black" />
+              <CardContent>
+                <div className="w-full h-48 overflow-hidden border-2 border-black rounded-base mb-2 mt-4">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                {project.description}
+              </CardContent>
+              <CardFooter className="overflow-x-auto flex flex-wrap">
+                {project.technologies.map((tech) => (
+                  <Badge key={`${project.title}-${tech}`} className="mx-0.5 my-0.5">
+                    {tech}
+                  </Badge>
+                ))}
+              </CardFooter>
+            </Card>
           );
         })}
       </div>
