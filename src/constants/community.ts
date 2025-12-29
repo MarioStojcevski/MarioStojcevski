@@ -82,5 +82,15 @@ export const workshops: Workshop[] = [
     topics: ["React", "Forms", "Validation"],
     image: "./react-forms-workshop/react-forms1.jpg"
   },
+  {
+    title: "Game Development in Three.js",
+    date: "2023",
+    location: "Base42, Skopje",
+    type: "Workshop",
+    description: "A workshop on game development using Three.js, covering 3D graphics, animations, and interactive game mechanics.",
+    topics: ["Three.js", "Game Development", "3D Graphics", "WebGL"],
+    url: "https://42.mk",
+    image: "./threejs-workshop/threejs.png"
+  },
 ];
 
