@@ -1,9 +1,33 @@
+import { useState } from "react";
 import Layout from "@/components/layout";
+import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { MultiStemAudioPlayer } from "@/components/ui/multi-stem-audio-player";
+import { ImageGalleryModal } from "@/components/ui/modal";
+import { QUICK_LINKS_EXTENDED } from "@/constants/social";
 
 const AboutMe = () => {
+  const [openModal, setOpenModal] = useState<"hiking" | "rock-climbing" | "cycling" | null>(null);
+
+  const hikingImages = [
+    "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+  ];
+
+  const rockClimbingImages = [
+    "/rocks/rock1.jpg",
+    "/rocks/rock2.jpg",
+  ];
+
+  const cyclingImages = [
+    "/bikes/bike1.jpg",
+    "/bikes/bike2.jpg",
+    "/bikes/bike3.jpg",
+    "/bikes/bike4.jpg",
+  ];
+
   return (
     <Layout>
       <div className="w-full">
@@ -16,7 +40,10 @@ const AboutMe = () => {
           <div>
             <h2 className="text-3xl font-bold mb-4">My Passions</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-chart-5 border-2 border-black">
+              <Card 
+                className="bg-chart-5 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
+                onClick={() => setOpenModal("hiking")}
+              >
                 <CardHeader>
                   <h3 className="text-xl font-bold">🏔️ Hiking</h3>
                 </CardHeader>
@@ -28,7 +55,10 @@ const AboutMe = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-chart-2 border-2 border-black">
+              <Card 
+                className="bg-chart-2 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
+                onClick={() => setOpenModal("rock-climbing")}
+              >
                 <CardHeader>
                   <h3 className="text-xl font-bold">🧗 Rock Climbing</h3>
                 </CardHeader>
@@ -40,7 +70,10 @@ const AboutMe = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-chart-4 border-2 border-black">
+              <Card 
+                className="bg-chart-4 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
+                onClick={() => setOpenModal("cycling")}
+              >
                 <CardHeader>
                   <h3 className="text-xl font-bold">🚴 Cycling</h3>
                 </CardHeader>
@@ -97,41 +130,33 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className="border-2 border-black rounded-base bg-main p-6">
-            <h2 className="text-2xl font-bold mb-4">Let's Connect</h2>
-            <p className="text-gray-700 mb-4">
-              Interested in collaborating or just want to chat? Feel free to reach out!
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a 
-                href="https://www.linkedin.com/in/mariostojcevski" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cursor-pointer"
-              >
-                <Badge className="text-base px-4 py-2 cursor-pointer bg-[#0077B5] text-white border-[#0077B5] hover:bg-[#005885] hover:border-[#005885] transition-all">
-                  LinkedIn
-                </Badge>
-              </a>
-              <a 
-                href="https://github.com/mariostojcevski" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cursor-pointer"
-              >
-                <Badge className="text-base px-4 py-2 cursor-pointer bg-[#24292e] text-white border-[#24292e] hover:bg-[#181717] hover:border-[#181717] transition-all">
-                  GitHub
-                </Badge>
-              </a>
-              <a href="mailto:mariostojcevski@gmail.com" className="cursor-pointer">
-                <Badge className="text-base px-4 py-2 cursor-pointer bg-pink-500 text-white border-pink-500 hover:bg-pink-600 hover:border-pink-600 transition-all">
-                  Email
-                </Badge>
-              </a>
-            </div>
-          </div>
+          <Footer
+            title="Let's Connect"
+            description="Interested in collaborating or just want to chat? Feel free to reach out!"
+            quickLinks={QUICK_LINKS_EXTENDED}
+            showEmail
+          />
         </div>
       </div>
+
+      <ImageGalleryModal
+        title="🏔️ Hiking"
+        images={hikingImages}
+        isOpen={openModal === "hiking"}
+        onClose={() => setOpenModal(null)}
+      />
+      <ImageGalleryModal
+        title="🧗 Rock Climbing"
+        images={rockClimbingImages}
+        isOpen={openModal === "rock-climbing"}
+        onClose={() => setOpenModal(null)}
+      />
+      <ImageGalleryModal
+        title="🚴 Cycling"
+        images={cyclingImages}
+        isOpen={openModal === "cycling"}
+        onClose={() => setOpenModal(null)}
+      />
     </Layout>
   );
 };

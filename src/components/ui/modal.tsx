@@ -48,7 +48,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
         className={cn(
           "relative w-full max-w-3xl max-h-[90vh] overflow-y-auto",
           "bg-white border-2 border-black rounded-base p-6",
-          "shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]",
+          "shadow-[8px_8px_0px_0px_rgba(50,50,50,1)]",
           "animate-[modal-slide-up_0.4s_ease-out]"
         )}
         onClick={(e) => e.stopPropagation()}
@@ -268,7 +268,7 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
         className={cn(
           "relative w-full max-w-5xl h-[95vh] overflow-hidden",
           "bg-white border-2 border-black rounded-base p-6",
-          "shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]",
+          "shadow-[8px_8px_0px_0px_rgba(50,50,50,1)]",
           "animate-[modal-slide-up_0.4s_ease-out]",
           "flex flex-col"
         )}
@@ -341,5 +341,36 @@ function GameModal({ game, isOpen, onClose }: GameModalProps) {
   return createPortal(modalContent, document.body);
 }
 
-export { Modal, ProjectModal, GameModal };
+interface ImageGalleryModalProps {
+  title: string;
+  images: string[];
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function ImageGalleryModal({ title, images, isOpen, onClose }: ImageGalleryModalProps) {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <div className="space-y-6">
+        <h2 className="text-3xl font-bold">{title}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="w-full h-64 overflow-hidden border-2 border-black rounded-base"
+            >
+              <img
+                src={image}
+                alt={`${title} ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </Modal>
+  );
+}
+
+export { Modal, ProjectModal, GameModal, ImageGalleryModal };
 

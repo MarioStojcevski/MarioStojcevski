@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import Layout from "@/components/layout";
+import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QUICK_LINKS_EXTENDED } from "@/constants/social";
 
 const NotFound = () => {
   return (
@@ -28,33 +30,9 @@ const NotFound = () => {
           </CardContent>
         </Card>
 
-        <Card className="bg-chart-2 border-2 border-black max-w-2xl w-full">
-          <CardContent className="p-6">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/about-me" className="cursor-pointer">
-                <Button variant="outline" className="bg-white border-black hover:bg-black hover:text-white">
-                  About Me
-                </Button>
-              </Link>
-              <Link to="/games" className="cursor-pointer">
-                <Button variant="outline" className="bg-white border-black hover:bg-black hover:text-white">
-                  Games
-                </Button>
-              </Link>
-              <Link to="/community" className="cursor-pointer">
-                <Button variant="outline" className="bg-white border-black hover:bg-black hover:text-white">
-                  Dev Community
-                </Button>
-              </Link>
-              <Link to="/soft-skills" className="cursor-pointer">
-                <Button variant="outline" className="bg-white border-black hover:bg-black hover:text-white">
-                  Soft Skills
-                </Button>
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="max-w-2xl w-full">
+          <Footer quickLinks={QUICK_LINKS_EXTENDED} />
+        </div>
       </div>
     </Layout>
   );

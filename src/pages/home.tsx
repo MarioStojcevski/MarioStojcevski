@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Layout from "@/components/layout";
+import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -181,30 +182,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Quick Links */}
-      <div className="border-2 border-black rounded-base bg-main p-6">
-        <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
-        <div className="flex flex-wrap gap-4">
-          <Link to="/projects" className="cursor-pointer">
-            <Badge className="text-base px-4 py-2 cursor-pointer bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all">
-              All Projects
-            </Badge>
-          </Link>
-          <Link to="/games" className="cursor-pointer">
-            <Badge className="text-base px-4 py-2 cursor-pointer bg-chart-5 text-white border-chart-5 hover:bg-chart-5/80 hover:border-chart-5/80 transition-all">
-              Games
-            </Badge>
-          </Link>
-          <Link to="/about-me" className="cursor-pointer">
-            <Badge className="text-base px-4 py-2 cursor-pointer bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700 transition-all">
-              About Me
-            </Badge>
-          </Link>
-        </div>
-        <div className="mt-6 text-center text-sm text-gray-600">
-          © 2025 mariostojcevski
-        </div>
-      </div>
+      <Footer />
     </Layout>
   );
 };

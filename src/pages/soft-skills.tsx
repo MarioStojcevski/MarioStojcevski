@@ -21,7 +21,7 @@ const SoftSkills = () => {
             I finished my 2 weeks training in Krakow Poland for a certified soft skills trainer back when I was in second year undergraduate.
           </p>
           <div className="mb-8">
-            <Card className="border-2 border-black bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer">
+            <Card className="border-2 border-black bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all cursor-pointer">
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-start gap-4">

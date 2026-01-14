@@ -1,4 +1,4 @@
-export const cardHoverStyles = "transition-all hover:translate-x-1 hover:translate-y-1 active:translate-x-0 active:translate-y-0";
+export const cardHoverStyles = "transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] active:translate-x-0 active:translate-y-0";
 
 export const cardBaseStyles = "bg-white border-2 border-black cursor-pointer";
 

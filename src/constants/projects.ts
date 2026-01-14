@@ -287,31 +287,6 @@ const projects: Project[] = [
       "Modern web technologies"
     ]
   },
-  {
-    title: "Cute website for my girlfriend",
-    description: "A cute little website I built for my girlfriend when we were doing long distance. It's basically a countdown timer showing how many days, hours, and minutes until we see each other again. Super simple but it helped us both stay excited about our next visit! 💕",
-    responsibilities: [
-      "Development",
-      "Design"
-    ],
-    technologies: [
-      "TypeScript",
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Vite"
-    ],
-    image: "https://i.pinimg.com/736x/82/2c/fb/822cfb28176afc20a0a0743baf99e7e9.jpg",
-    year: "2024",
-    status: "Completed",
-    url: "https://anakitanoska.mariostojcevski.com/",
-    highlights: [
-      "Countdown timer counting down to our next visit",
-      "Real-time updates",
-      "Personal project built with love",
-      "Helped us stay connected during long distance"
-    ]
-  }
 ];
 
 export default projects;
