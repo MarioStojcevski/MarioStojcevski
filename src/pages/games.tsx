@@ -25,7 +25,7 @@ const Games = () => {
             {games.map((game) => (
               <Card key={game.title} className={`${game.color} ${borderBlack} ${cardHoverStyles}`}>
                 {game.image && (
-                  <div className={`w-full h-48 overflow-hidden ${borderBlack} rounded-t-base border-b-2`}>
+                  <div className="w-full h-48 overflow-hidden rounded-t-base border-b-2 border-black">
                     <img
                       src={game.image}
                       alt={game.title}

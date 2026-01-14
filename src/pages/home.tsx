@@ -85,7 +85,7 @@ const Home = () => {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-5xl font-bold">Featured Projects</h2>
           <Link to="/projects" className="cursor-pointer">
-            <Button variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700">View All →</Button>
+            <Button variant="outline" className="bg-green-600 text-white border-black hover:bg-green-700 hover:border-black">View All →</Button>
           </Link>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -94,10 +94,10 @@ const Home = () => {
             const projectSlug = createSlug(project.title);
             return (
             <Link key={project.title} to={`/projects#${projectSlug}`} className="cursor-pointer">
-              <Card className={`${colorClass} ${borderBlack} cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 h-full`}>
+              <Card className={`${colorClass} ${borderBlack} cursor-pointer transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] h-full`}>
                 <CardContent className="p-0">
                   {project.image && (
-                    <div className={`w-full h-40 overflow-hidden ${borderBlack} rounded-t-base border-b-2`}>
+                    <div className="w-full h-40 overflow-hidden rounded-t-base border-b-2 border-black">
                       <img
                         src={project.image}
                         alt={project.title}

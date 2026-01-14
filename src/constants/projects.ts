@@ -32,7 +32,7 @@ const projects: Project[] = [
   },
   {
     title: "Lista - Amazon Design Platform",
-    description: "An Amazon-centered design platform that enables VAs and Amazon businesses to create premium branded product images using design templates. Features a design generator that creates branded listing images from product information and visuals, with a high-fidelity editor for customization. Images can be exported or integrated directly to Amazon listings.",
+    description: "Lista is an Amazon-centered design platform that lets VAs and Amazon businesses choose premium-looking design templates to brand their products on Amazon for free. Lista is the first and only Amazon-centered platform with templates specific to Amazon's requirements in terms of size and content. Features a design generator that creates branded listing images from product information, images, or renders, eliminating the need for manual design work. Users can fine-tune designs using a high-fidelity editor and integrate images directly to Amazon listings.",
     responsibilities: [
       "Development",
       "System Architecture"
@@ -50,10 +50,13 @@ const projects: Project[] = [
     year: "2023",
     status: "Completed",
     highlights: [
-      "First Amazon-centered design platform with Amazon-specific templates",
-      "Automated design generation from product information",
+      "First and only Amazon-centered design platform",
+      "Amazon-specific templates meeting size and content requirements",
+      "Automated design generator - no manual design needed",
+      "Input key product selling points and images to generate branded listings",
+      "High-fidelity editor for fine-tuning generated designs",
       "Direct integration with Amazon listings",
-      "High-fidelity image editor for fine-tuning"
+      "Free premium templates for VAs and Amazon businesses"
     ]
   },
   {

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import Layout from "@/components/layout";
-import { Badge } from "@/components/ui/badge";
+import { TechnologyBadge } from "@/components/ui/technology-badge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { ProjectModal } from "@/components/ui/modal";
 import projects from "@/constants/projects";
@@ -55,9 +55,7 @@ const Projects = () => {
               </CardContent>
               <CardFooter className="overflow-x-auto flex flex-wrap">
                 {project.technologies.map((tech) => (
-                  <Badge key={`${project.title}-${tech}`} className="mx-0.5 my-0.5">
-                    {tech}
-                  </Badge>
+                  <TechnologyBadge key={`${project.title}-${tech}`} technology={tech} className="mx-0.5 my-0.5" />
                 ))}
               </CardFooter>
             </Card>
