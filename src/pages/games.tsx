@@ -25,10 +25,10 @@ const Games = () => {
     <Layout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-chart-5 mb-8">
+          <h1 className="text-6xl lg:text-7xl font-bold text-chart-5 mb-8">
             Games
           </h1>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-xl text-gray-700 mb-8">
             Some games I've built. They're full of bugs, so bring your patience with you! 🎮
           </p>
         </div>
@@ -47,11 +47,11 @@ const Games = () => {
                   </div>
                 )}
                 <CardHeader>
-                  <h2 className="text-2xl font-bold">{game.title}</h2>
+                  <h2 className="text-3xl font-bold">{game.title}</h2>
                 </CardHeader>
                 <CardContent className="p-6">
                   {game.description && (
-                    <p className="text-gray-700 mb-6">{game.description}</p>
+                    <p className="text-base text-gray-700 mb-6">{game.description}</p>
                   )}
                   <Button
                     onClick={() => handlePlayClick(game)}

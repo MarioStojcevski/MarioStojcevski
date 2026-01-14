@@ -40,7 +40,7 @@ export const EventCard = ({
     <Card className={`${cardBaseStyles} ${cardHoverStyles}`}>
       {image && <EventImage image={image} title={title} />}
       <CardHeader>
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <h3 className="text-3xl font-bold">{title}</h3>
         <EventBadges date={date} duration={duration} location={location} badgeTheme={badgeTheme} />
         {coTrainer && <CoTrainerInfo coTrainer={coTrainer} coTrainerUrl={coTrainerUrl} />}
       </CardHeader>

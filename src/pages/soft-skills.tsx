@@ -13,11 +13,11 @@ const SoftSkills = () => {
     <Layout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-5xl font-bold mb-4 text-purple-600">Soft Skills</h1>
-          <p className="text-lg text-gray-700 mb-4">
+          <h1 className="text-6xl font-bold mb-4 text-purple-600">Soft Skills</h1>
+          <p className="text-xl text-gray-700 mb-4">
             Soft skills trainings and workshops I've conducted.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-xl text-gray-700 mb-6">
             I finished my 2 weeks training in Krakow Poland for a certified soft skills trainer back when I was in second year undergraduate.
           </p>
           <div className="mb-8">
@@ -47,8 +47,8 @@ const SoftSkills = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-1">EESTEC Certified Soft Skills Trainer</h3>
-                      <p className="text-gray-600 text-sm">
+                      <h3 className="text-2xl font-bold mb-1">EESTEC Certified Soft Skills Trainer</h3>
+                      <p className="text-gray-600 text-base">
                         Official certification from EESTEC Training Team
                       </p>
                     </div>

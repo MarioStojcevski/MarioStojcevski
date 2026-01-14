@@ -49,7 +49,7 @@ const Projects = () => {
               onClick={() => handleCardClick(project)}
               className={`${colorClass} ${cardHoverStyles}`}
             >
-              <CardHeader className="text-2xl">
+              <CardHeader className="text-3xl">
                 {project.title}
               </CardHeader>
               <hr className="mx-6 border border-black" />

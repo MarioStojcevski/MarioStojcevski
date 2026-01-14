@@ -9,14 +9,14 @@ const Community = () => {
     <Layout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-5xl font-bold mb-4">Dev Community</h1>
-          <p className="text-lg text-gray-700">
+          <h1 className="text-6xl font-bold mb-4">Dev Community</h1>
+          <p className="text-xl text-gray-700">
             Events I've spoken at and workshops I've held as a developer.
           </p>
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-6">Speaking Events</h2>
+          <h2 className="text-4xl font-bold mb-6">Speaking Events</h2>
           {speakingEvents.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2">
               {speakingEvents.map((event, index) => (
@@ -42,7 +42,7 @@ const Community = () => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-6">Workshops</h2>
+          <h2 className="text-4xl font-bold mb-6">Workshops</h2>
           {workshops.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2">
               {workshops.map((workshop, index) => (

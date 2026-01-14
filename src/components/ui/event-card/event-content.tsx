@@ -26,14 +26,14 @@ export const EventContent = ({
     <>
       {goal && (
         <div className="mt-4">
-          <p className="font-semibold mb-2">Goal of Session:</p>
-          <p className="text-gray-700">{goal}</p>
+          <p className="text-lg font-semibold mb-2">Goal of Session:</p>
+          <p className="text-base text-gray-700">{goal}</p>
         </div>
       )}
-      {description && <p className="mt-4 text-gray-700">{description}</p>}
+      {description && <p className="mt-4 text-base text-gray-700">{description}</p>}
       {topics && topics.length > 0 && (
         <div className="mt-4">
-          <p className="font-semibold mb-2">Topics Covered:</p>
+          <p className="text-lg font-semibold mb-2">Topics Covered:</p>
           <div className="flex flex-wrap gap-2">
             {topics.map((topic, index) => (
               <Badge key={`${title}-topic-${index}`} variant="outline" className={topicBadgeClass}>
@@ -45,8 +45,8 @@ export const EventContent = ({
       )}
       {learningObjectives && learningObjectives.length > 0 && (
         <div className="mt-4">
-          <p className="font-semibold mb-2">Learning Objectives:</p>
-          <ul className="list-disc list-inside space-y-1 text-gray-700">
+          <p className="text-lg font-semibold mb-2">Learning Objectives:</p>
+          <ul className="list-disc list-inside space-y-1 text-base text-gray-700">
             {learningObjectives.map((objective, index) => (
               <li key={`${title}-objective-${index}`}>{objective}</li>
             ))}

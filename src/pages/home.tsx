@@ -16,15 +16,15 @@ const Home = () => {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center mb-16">
         <div className="flex-1">
           <div className="mb-6">
-            <h1 className="text-6xl lg:text-7xl font-bold text-chart-5 mb-2">
+            <h1 className="text-7xl lg:text-8xl font-bold text-chart-5 mb-2">
               Mario Stojcevski
             </h1>
-            <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-gray-800 mb-6">
               Software Engineer
             </h2>
           </div>
 
-          <div className="space-y-4 text-lg text-gray-700 mb-8">
+          <div className="space-y-4 text-xl text-gray-700 mb-8">
             <p>
               Welcome to <span className="inline-block align-middle min-w-[180px] text-center"><Link to="/" className="text-chart-5 font-bold hover:text-chart-5/80 inline-block cursor-pointer transition-colors hover:animate-[spin-pop_0.6s_ease-in-out_1] transform-origin-center">mariostojcevski.com</Link></span>! 🎉
             </p>
@@ -35,7 +35,7 @@ const Home = () => {
             <p>
               Let's connect and create something amazing together! 😎
             </p>
-            <p className="text-base text-gray-600 italic">
+            <p className="text-lg text-gray-600 italic">
               P.S. There might be some games around if I still have them online. 
               They're full of bugs, so bring your patience with you! 🎮
             </p>
@@ -43,10 +43,10 @@ const Home = () => {
 
           <div className="flex flex-wrap gap-4 mt-8">
             <Link to="/projects" className="cursor-pointer">
-              <Button>View Projects</Button>
+              <Button className="hover:bg-yellow-600 hover:text-white">View Projects</Button>
             </Link>
             <Link to="/about-me" className="cursor-pointer">
-              <Button variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700">About Me</Button>
+              <Button variant="outline" className="bg-green-600 text-white border-black hover:bg-green-700">About Me</Button>
             </Link>
             <a 
               href="https://www.linkedin.com/in/mariostojcevski" 
@@ -54,7 +54,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="cursor-pointer"
             >
-              <Button variant="outline" className="inline-flex items-center gap-2 bg-[#0077B5] text-white border-[#0077B5] hover:bg-[#005885] hover:border-[#005885]">
+              <Button variant="outline" className="inline-flex items-center gap-2 bg-[#0077B5] text-white border-black hover:bg-[#005885]">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="18" 
@@ -74,7 +74,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="cursor-pointer"
             >
-              <Button variant="outline" className="inline-flex items-center gap-2 bg-[#24292e] text-white border-[#24292e] hover:bg-[#181717] hover:border-[#181717]">
+              <Button variant="outline" className="inline-flex items-center gap-2 bg-[#24292e] text-white border-green-500 hover:bg-[#181717]">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="18" 
@@ -106,26 +106,26 @@ const Home = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
         <Card className="bg-chart-1 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}>
           <CardContent className="pt-6 pb-6">
-            <div className="text-4xl font-bold mb-2">{totalProjects}+</div>
-            <div className="text-sm font-semibold">Projects</div>
+            <div className="text-5xl font-bold mb-2">{totalProjects}+</div>
+            <div className="text-base font-semibold">Projects</div>
           </CardContent>
         </Card>
         <Card className="bg-chart-2 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '0.5s' }}>
           <CardContent className="pt-6 pb-6">
-            <div className="text-4xl font-bold mb-2">5+</div>
-            <div className="text-sm font-semibold">Years Experience</div>
+            <div className="text-5xl font-bold mb-2">5+</div>
+            <div className="text-base font-semibold">Years Experience</div>
           </CardContent>
         </Card>
         <Card className="bg-chart-3 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '1s' }}>
           <CardContent className="pt-6 pb-6">
-            <div className="text-4xl font-bold mb-2">10+</div>
-            <div className="text-sm font-semibold">Technologies</div>
+            <div className="text-5xl font-bold mb-2">10+</div>
+            <div className="text-base font-semibold">Technologies</div>
           </CardContent>
         </Card>
         <Card className="bg-chart-4 border-2 border-black text-center animate-[shake-slow_3s_ease-in-out_infinite]" style={{ animationDelay: '1.5s' }}>
           <CardContent className="pt-6 pb-6">
-            <div className="text-4xl font-bold mb-2">∞</div>
-            <div className="text-sm font-semibold">Passion</div>
+            <div className="text-5xl font-bold mb-2">∞</div>
+            <div className="text-base font-semibold">Passion</div>
           </CardContent>
         </Card>
       </div>
@@ -133,7 +133,7 @@ const Home = () => {
       {/* Featured Projects */}
       <div className="mb-16">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-4xl font-bold">Featured Projects</h2>
+          <h2 className="text-5xl font-bold">Featured Projects</h2>
           <Link to="/projects" className="cursor-pointer">
             <Button variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700">View All →</Button>
           </Link>
@@ -157,8 +157,8 @@ const Home = () => {
                     </div>
                   )}
                   <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-sm text-gray-700 mb-3 line-clamp-2">
+                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-base text-gray-700 mb-3 line-clamp-2">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-1">

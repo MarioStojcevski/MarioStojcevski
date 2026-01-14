@@ -31,24 +31,24 @@ const AboutMe = () => {
   return (
     <Layout>
       <div className="w-full">
-        <h1 className="text-5xl lg:text-6xl font-bold text-chart-5 mb-8">
+        <h1 className="text-6xl lg:text-7xl font-bold text-chart-5 mb-8">
           About Me
         </h1>
 
         <div className="space-y-8 mb-12">
 
           <div>
-            <h2 className="text-3xl font-bold mb-4">My Passions</h2>
+            <h2 className="text-4xl font-bold mb-4">My Passions</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card 
                 className="bg-chart-5 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
                 onClick={() => setOpenModal("hiking")}
               >
                 <CardHeader>
-                  <h3 className="text-xl font-bold">🏔️ Hiking</h3>
+                  <h3 className="text-2xl font-bold">🏔️ Hiking</h3>
                 </CardHeader>
                 <CardContent className="pb-8">
-                  <p className="text-gray-700">
+                  <p className="text-base text-gray-700">
                     I love exploring nature trails and mountains. There's something peaceful 
                     about being in nature that helps me recharge and find inspiration.
                   </p>
@@ -60,10 +60,10 @@ const AboutMe = () => {
                 onClick={() => setOpenModal("rock-climbing")}
               >
                 <CardHeader>
-                  <h3 className="text-xl font-bold">🧗 Rock Climbing</h3>
+                  <h3 className="text-2xl font-bold">🧗 Rock Climbing</h3>
                 </CardHeader>
                 <CardContent className="pb-8">
-                  <p className="text-gray-700">
+                  <p className="text-base text-gray-700">
                     Rock climbing challenges me both physically and mentally. It teaches 
                     problem-solving, patience, and pushing beyond limits.
                   </p>
@@ -75,10 +75,10 @@ const AboutMe = () => {
                 onClick={() => setOpenModal("cycling")}
               >
                 <CardHeader>
-                  <h3 className="text-xl font-bold">🚴 Cycling</h3>
+                  <h3 className="text-2xl font-bold">🚴 Cycling</h3>
                 </CardHeader>
                 <CardContent className="pb-8">
-                  <p className="text-gray-700">
+                  <p className="text-base text-gray-700">
                     Whether it's road cycling or mountain biking, I enjoy the freedom and 
                     adventure that comes with exploring on two wheels.
                   </p>
@@ -88,22 +88,22 @@ const AboutMe = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold mb-4">Beyond Code</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+            <h2 className="text-4xl font-bold mb-4">Beyond Code</h2>
+            <p className="text-xl text-gray-700 leading-relaxed mb-4">
               When I'm not coding, you'll find me outdoors pursuing my passions. These activities 
               keep me balanced and bring fresh perspectives to my work. They remind me that 
               problem-solving isn't just about code—it's about approaching challenges with 
               creativity and determination.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+            <p className="text-xl text-gray-700 leading-relaxed mb-4">
               I'm also an audio engineer actively making music, mostly boom bap hip hop and experimental electronic music. 
               Music production allows me to combine my technical skills with artistic expression, creating 
               something that resonates on a different level than code.
             </p>
             
             <div className="mt-6">
-              <h3 className="text-2xl font-bold mb-4">Music</h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              <h3 className="text-3xl font-bold mb-4">Music</h3>
+              <p className="text-xl text-gray-700 leading-relaxed mb-4">
                 I'm also a certified audio engineer from{" "}
                 <a
                   href="https://www.google.com/maps/search/DNS+Production+Skopje"
@@ -115,7 +115,7 @@ const AboutMe = () => {
                 </a>
                 .
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              <p className="text-xl text-gray-700 leading-relaxed mb-4">
                 Here's one of many projects I worked on
               </p>
               <MultiStemAudioPlayer

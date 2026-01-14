@@ -21,10 +21,10 @@ export const Footer = ({
     <div className="border-2 border-black rounded-base bg-main p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className={`${description ? "text-3xl" : "text-2xl"} font-bold ${description ? "mb-2" : ""}`}>
+          <h2 className={`${description ? "text-4xl" : "text-3xl"} font-bold ${description ? "mb-2" : ""}`}>
             {title}
           </h2>
-          {description && <p className="text-gray-700 text-sm">{description}</p>}
+          {description && <p className="text-gray-700 text-base">{description}</p>}
         </div>
         <div className="flex gap-3">
           <SocialIconLink platform="linkedin" href={SOCIAL_URLS.LINKEDIN} />
@@ -34,7 +34,7 @@ export const Footer = ({
         </div>
       </div>
       <hr className="border-t-2 border-black mb-4" />
-      <div className="flex flex-col gap-2 text-sm mb-4">
+      <div className="flex flex-col gap-2 text-base mb-4">
         {showEmail && (
           <a
             href={`mailto:${SOCIAL_URLS.EMAIL}`}
@@ -54,7 +54,7 @@ export const Footer = ({
         ))}
       </div>
       {!showEmail && (
-        <div className="mt-6 text-center text-sm text-gray-600">
+        <div className="mt-6 text-center text-base text-gray-600">
           © 2025 mariostojcevski
         </div>
       )}

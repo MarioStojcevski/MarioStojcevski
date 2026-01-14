@@ -8,7 +8,7 @@ export const linkDisabledStyles = "mt-4 inline-block text-gray-400 cursor-defaul
 
 export const emptyStateCardStyles = "border-2 border-black bg-gray-50";
 
-export const emptyStateContentStyles = "p-6 text-center text-gray-500";
+export const emptyStateContentStyles = "p-6 text-center text-lg text-gray-500";
 
 export const projectCardColors = ['bg-chart-2', 'bg-chart-3', 'bg-chart-4', 'bg-chart-5'] as const;
 
