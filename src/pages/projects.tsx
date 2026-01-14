@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router";
 import Layout from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
@@ -6,22 +6,12 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { ProjectModal } from "@/components/ui/modal";
 import projects from "@/constants/projects";
 import type { Project } from "@/types/project";
-import { cardHoverStyles, projectCardColors, createSlug } from "@/lib/styles";
+import { useModal } from "@/hooks/use-modal";
+import { cardHoverStyles, projectCardColors, createSlug, borderBlack } from "@/lib/styles";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isOpen, selectedItem, open, close } = useModal<Project>();
   const location = useLocation();
-
-  const handleCardClick = (project: Project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
 
   useEffect(() => {
     // Scroll to project if hash is present in URL
@@ -46,7 +36,7 @@ const Projects = () => {
             <Card 
               key={project.title}
               id={projectSlug}
-              onClick={() => handleCardClick(project)}
+              onClick={() => open(project)}
               className={`${colorClass} ${cardHoverStyles}`}
             >
               <CardHeader className="text-3xl">
@@ -54,7 +44,7 @@ const Projects = () => {
               </CardHeader>
               <hr className="mx-6 border border-black" />
               <CardContent>
-                <div className="w-full h-48 overflow-hidden border-2 border-black rounded-base mb-2 mt-4">
+                <div className={`w-full h-48 overflow-hidden ${borderBlack} rounded-base mb-2 mt-4`}>
                   <img
                     src={project.image}
                     alt={project.title}
@@ -74,11 +64,11 @@ const Projects = () => {
           );
         })}
       </div>
-      {selectedProject && (
+      {selectedItem && (
         <ProjectModal
-          project={selectedProject}
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
+          project={selectedItem}
+          isOpen={isOpen}
+          onClose={close}
         />
       )}
     </Layout>

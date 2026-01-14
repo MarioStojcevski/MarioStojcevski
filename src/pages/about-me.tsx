@@ -4,7 +4,9 @@ import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { MultiStemAudioPlayer } from "@/components/ui/multi-stem-audio-player";
 import { ImageGalleryModal } from "@/components/ui/modal";
+import { PageHeader } from "@/components/ui/page-header";
 import { QUICK_LINKS_EXTENDED } from "@/constants/social";
+import { borderBlack } from "@/lib/styles";
 
 const AboutMe = () => {
   const [openModal, setOpenModal] = useState<"hiking" | "rock-climbing" | "cycling" | null>(null);
@@ -31,9 +33,10 @@ const AboutMe = () => {
   return (
     <Layout>
       <div className="w-full">
-        <h1 className="text-6xl lg:text-7xl font-bold text-chart-5 mb-8">
-          About Me
-        </h1>
+        <PageHeader
+          title="About Me"
+          titleClassName="text-6xl lg:text-7xl font-bold text-chart-5 mb-8"
+        />
 
         <div className="space-y-8 mb-12">
 
@@ -41,7 +44,7 @@ const AboutMe = () => {
             <h2 className="text-4xl font-bold mb-4">My Passions</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card 
-                className="bg-chart-5 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
+                className={`bg-chart-5 ${borderBlack} cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all`}
                 onClick={() => setOpenModal("hiking")}
               >
                 <CardHeader>
@@ -56,7 +59,7 @@ const AboutMe = () => {
               </Card>
 
               <Card 
-                className="bg-chart-2 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
+                className={`bg-chart-2 ${borderBlack} cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all`}
                 onClick={() => setOpenModal("rock-climbing")}
               >
                 <CardHeader>
@@ -71,7 +74,7 @@ const AboutMe = () => {
               </Card>
 
               <Card 
-                className="bg-chart-4 border-2 border-black cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all"
+                className={`bg-chart-4 ${borderBlack} cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all`}
                 onClick={() => setOpenModal("cycling")}
               >
                 <CardHeader>

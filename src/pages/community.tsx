@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { EventCard } from "@/components/ui/event-card";
+import { PageHeader } from "@/components/ui/page-header";
 import { speakingEvents, workshops } from "@/constants/community";
 import { emptyStateCardStyles, emptyStateContentStyles } from "@/lib/styles";
 
@@ -8,12 +9,12 @@ const Community = () => {
   return (
     <Layout>
       <div className="space-y-8">
-        <div>
-          <h1 className="text-6xl font-bold mb-4">Dev Community</h1>
-          <p className="text-xl text-gray-700">
-            Events I've spoken at and workshops I've held as a developer.
-          </p>
-        </div>
+        <PageHeader
+          title="Dev Community"
+          description="Events I've spoken at and workshops I've held as a developer."
+          titleClassName="text-6xl font-bold mb-4"
+          descriptionClassName="text-xl text-gray-700"
+        />
 
         <div>
           <h2 className="text-4xl font-bold mb-6">Speaking Events</h2>

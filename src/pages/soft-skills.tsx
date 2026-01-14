@@ -3,8 +3,9 @@ import Layout from "@/components/layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { EventCard } from "@/components/ui/event-card";
 import { Modal } from "@/components/ui/modal";
+import { PageHeader } from "@/components/ui/page-header";
 import { softSkillsTrainings } from "@/constants/soft-skills";
-import { emptyStateCardStyles, emptyStateContentStyles } from "@/lib/styles";
+import { emptyStateCardStyles, emptyStateContentStyles, borderBlack } from "@/lib/styles";
 
 const SoftSkills = () => {
   const [isCertificateModalOpen, setIsCertificateModalOpen] = useState(false);
@@ -13,20 +14,22 @@ const SoftSkills = () => {
     <Layout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-6xl font-bold mb-4 text-purple-600">Soft Skills</h1>
-          <p className="text-xl text-gray-700 mb-4">
-            Soft skills trainings and workshops I've conducted.
-          </p>
+          <PageHeader
+            title="Soft Skills"
+            description="Soft skills trainings and workshops I've conducted."
+            titleClassName="text-6xl font-bold mb-4 text-purple-600"
+            descriptionClassName="text-xl text-gray-700 mb-4"
+          />
           <p className="text-xl text-gray-700 mb-6">
             I finished my 2 weeks training in Krakow Poland for a certified soft skills trainer back when I was in second year undergraduate.
           </p>
           <div className="mb-8">
-            <Card className="border-2 border-black bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all cursor-pointer">
+            <Card className={`${borderBlack} bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-[8px_8px_0px_0px_rgba(50,50,50,1)] transition-all cursor-pointer`}>
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 border-2 border-black bg-purple-500 rounded-base flex items-center justify-center">
+                      <div className={`w-16 h-16 ${borderBlack} bg-purple-500 rounded-base flex items-center justify-center`}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="32"
@@ -58,7 +61,7 @@ const SoftSkills = () => {
                       e.stopPropagation();
                       setIsCertificateModalOpen(true);
                     }}
-                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black bg-white rounded-base font-bold hover:bg-black hover:text-white transition-all cursor-pointer whitespace-nowrap"
+                    className={`inline-flex items-center gap-2 px-4 py-2 ${borderBlack} bg-white rounded-base font-bold hover:bg-black hover:text-white transition-all cursor-pointer whitespace-nowrap`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
