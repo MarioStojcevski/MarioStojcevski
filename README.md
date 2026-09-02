@@ -2,10 +2,10 @@
 
 ```
 ZZZZZZ  IIIIIII  PPPPP   EEEEE   RRRRR
-   ZZ      III   PP  PP  EE      RR  RR
-  ZZ       III   PPPPP   EEEE    RRRRR
- ZZ        III   PP      EE      RR RR
-ZZZZZZ     III   PP      EEEEE   RR  RR
+   ZZ     III    PP  PP  EE      RR  RR
+  ZZ      III    PPPPP   EEEE    RRRRR
+ ZZ       III    PP      EE      RR RR
+ZZZZZZ  IIIIIII  PP      EEEEE   RR  RR
 ```
 
 <br/>
