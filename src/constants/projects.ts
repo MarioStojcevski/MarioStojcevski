@@ -2,69 +2,39 @@ import type { Project } from "@/types/project";
 
 const projects: Project[] = [
   {
-    title: "Renderdeck - Video Editing Platform",
-    description: "Renderdeck is an online simple video editing tool specialized to bring the best user experience while creating beautiful videos for products. Users can export videos, download them, or publish directly to Shopify or Amazon accounts. Features a template-based system for easy video creation.",
+    title: "Rendalone - AI Video Editing Platform",
+    description: "Rendalone is an AI-powered video editing platform built as part of MamOps. It uses a Python API with FFmpeg running on a homelab server to render videos, storing them locally and returning download URLs. Features agentic video creation where users can input their own AI API keys and use their models to create and edit videos. The key differentiator: videos remain fully manually editable at every stage — no lock-in after generation. Automation and manual tweaking work together seamlessly.",
     responsibilities: [
       "Development",
-      "Software Architecture"
+      "Software Architecture",
+      "DevOps"
     ],
     technologies: [
-      "NextJS",
-      "Strapi",
-      "NodeJS",
-      "AWS Lambda",
-      "S3",
-      "CloudFront",
+      "Python",
+      "FFmpeg",
       "React",
       "TypeScript",
-      "Remotion",
-      "PostgreSQL"
+      "AI/LLM Integration",
+      "Homelab Server"
     ],
-    image: "https://i.pinimg.com/1200x/8f/c2/45/8fc245476a4b87259cb923fe9f0b2439.jpg",
-    year: "2023",
-    status: "Completed",
+    image: "https://images.unsplash.com/photo-1755997268370-56418ad174c2?w=800&h=600&fit=crop",
+    year: "2024",
+    status: "In Progress",
     highlights: [
-      "Simple, user-friendly video editing interface",
-      "Template-based video creation system",
-      "Direct integration with Shopify and Amazon",
-      "Export and download capabilities for product videos"
+      "Python API with FFmpeg for video rendering on homelab server",
+      "Agentic AI video creation with user-provided API keys",
+      "Full manual editing preserved alongside AI automation",
+      "Self-hosted infrastructure for cost control",
+      "Part of MamOps company platform"
     ]
   },
   {
-    title: "Lista - Amazon Design Platform",
-    description: "Lista is an Amazon-centered design platform that lets VAs and Amazon businesses choose premium-looking design templates to brand their products on Amazon for free. Lista is the first and only Amazon-centered platform with templates specific to Amazon's requirements in terms of size and content. Features a design generator that creates branded listing images from product information, images, or renders, eliminating the need for manual design work. Users can fine-tune designs using a high-fidelity editor and integrate images directly to Amazon listings.",
+    title: "C3RM - Customer Relationship Management",
+    description: "CRM system for a company's hiring pipeline. Integrated LeakyIn browser extension to scrape LinkedIn profiles for future hires — HR can approve draft data, then the system parses full profile details, evaluates candidate fit, and creates entries in the C3RM database. Features modular architecture with talent and core modules for comprehensive customer and workforce management.",
     responsibilities: [
       "Development",
-      "System Architecture"
-    ],
-    technologies: [
-      "React",
-      "Vue",
-      "Strapi",
-      "Puppeteer",
-      "PostgreSQL",
-      "AWS CloudFront",
-      "Docker"
-    ],
-    image: "https://i.pinimg.com/736x/34/e8/43/34e84361c908d4efe592cc659db69619.jpg",
-    year: "2023",
-    status: "Completed",
-    highlights: [
-      "First and only Amazon-centered design platform",
-      "Amazon-specific templates meeting size and content requirements",
-      "Automated design generator - no manual design needed",
-      "Input key product selling points and images to generate branded listings",
-      "High-fidelity editor for fine-tuning generated designs",
-      "Direct integration with Amazon listings",
-      "Free premium templates for VAs and Amazon businesses"
-    ]
-  },
-  {
-    title: "C3RM - Customer Relationship Management System",
-    description: "C3RM (Code Chemistry Customer Relationship Management System) is a powerful CRM platform designed to help businesses effectively manage customer relationships. Built with extensibility in mind, it features modular architecture with talent and core modules, enabling efficient customer interaction management, comprehensive data centralization, and seamless integration capabilities.",
-    responsibilities: [
-      "Development",
-      "Software Architecture"
+      "System Architecture",
+      "Integration"
     ],
     technologies: [
       "NextJS",
@@ -75,45 +45,47 @@ const projects: Project[] = [
       "TypeScript",
       "Docker"
     ],
-    image: "https://i.pinimg.com/736x/b2/e7/80/b2e780e5063d954a1c016a6623627ecf.jpg",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
     year: "2022",
     status: "Completed",
     highlights: [
       "Modular architecture built for extensibility",
+      "LeakyIn integration for automated LinkedIn profile import",
+      "AI-powered candidate evaluation and matching",
       "Talent module for recruitment and onboarding",
-      "Core module for customer, project, and workforce management",
-      "Centralized customer data management",
-      "Streamlined sales processes and lead nurturing"
+      "Centralized customer data management"
     ]
   },
   {
-    title: "C3RX - Resume Builder Integration",
-    description: "C3RX is a resume builder built as part of C3RM, leveraging Reactive Resume (RxResume) to enable users to create, update, and share professional resumes. Users have complete control over resume design including templates, colors, layouts, and sections. Resumes can be shared via unique links, exported as PDF, and saved directly to C3RM. Features real-time preview and dark mode support.",
+    title: "LeakyIn - LinkedIn Profile Chrome Extension",
+    description: "Chrome browser extension for a company's hiring workflow. Extracts LinkedIn profile data via screenshots, uses OCR and AI to structure the information, and integrates with C3RM to create hiring profiles. HR can scrape a profile with one click, approve draft data, then get full parsing with skills evaluation and candidate-company fit scoring.",
     responsibilities: [
       "Development",
-      "Integration"
+      "AI Integration"
     ],
     technologies: [
-      "Reactive Resume",
+      "Chrome Extension",
       "React",
       "TypeScript",
-      "C3RM Integration"
+      "OpenAI",
+      "Tesseract OCR",
+      "Tailwind CSS",
+      "Manifest V3"
     ],
-    image: "https://i.pinimg.com/736x/b2/e7/80/b2e780e5063d954a1c016a6623627ecf.jpg",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=600&fit=crop",
     year: "2023",
     status: "Completed",
     highlights: [
-      "Integrated Reactive Resume with C3RM system",
-      "Real-time resume preview and editing",
-      "Multiple resume creation and management",
-      "Direct save to C3RM profiles",
-      "Customizable templates, colors, and layouts",
-      "PDF export and shareable link functionality"
+      "One-click LinkedIn profile scraping",
+      "OCR + AI for structured data extraction",
+      "Automatic candidate-company fit evaluation",
+      "Direct integration with C3RM hiring system",
+      "Resume generation via Reactive Resume integration"
     ]
   },
   {
     title: "StudyBuddy - Course Management System",
-    description: "A course management application (similar to Udemy) built with Koa.js and React. The project features comprehensive database scripts written in PL/pgSQL for managing course data, student enrollments, and learning progress. Currently in development with a focus on robust database architecture and scalable backend design.",
+    description: "A course management application (similar to Udemy) built with Koa.js and React. Features comprehensive database scripts written in PL/pgSQL for managing course data, student enrollments, and learning progress. Focus on robust database architecture and scalable backend design.",
     responsibilities: [
       "Development",
       "Database Architecture",
@@ -140,56 +112,8 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "LeakyIn - LinkedIn Profile Extension",
-    description: "LeakyIn is a Google Chrome browser extension that extracts LinkedIn profile data and creates hiring profiles in C3RM. The extension captures profile screenshots, uses OCR and AI to extract structured data, and seamlessly integrates with the C3RM system to create hiring profiles and candidacies. Users can check if a profile exists in C3RM and load new profiles with a single click.",
-    responsibilities: [
-      "Development"
-    ],
-    technologies: [
-      "Chrome Extension",
-      "React",
-      "TypeScript",
-      "OpenAI",
-      "Tesseract OCR",
-      "Tailwind CSS",
-      "DaisyUI",
-      "Manifest V3"
-    ],
-    image: "https://i.pinimg.com/736x/7e/92/bf/7e92bf885410ac57b403b1d708accf92.jpg",
-    year: "2023",
-    status: "Completed",
-    highlights: [
-      "Automated LinkedIn profile extraction and processing",
-      "Screenshot-based data capture with OCR",
-      "AI-powered profile structuring into JSON format",
-      "Direct integration with C3RM hiring system",
-      "Seamless profile creation workflow"
-    ]
-  },
-  {
-    title: "E-commerce Platform for HVAC Products",
-    description: "An e-commerce platform built for selling and servicing air conditioning units and related HVAC products. The platform featured product listings, service booking, and customer management. The project is no longer active as the domain registration was discontinued.",
-    responsibilities: [
-      "Development"
-    ],
-    technologies: [
-      "Angular",
-      "Java",
-      "Spring"
-    ],
-    image: "https://i.pinimg.com/736x/e3/c6/25/e3c625daa1992ed1737f5f2cb5c8c0bb.jpg",
-    year: "2020",
-    status: "On Hold",
-    highlights: [
-      "Angular frontend for user interface",
-      "Java Spring backend for business logic",
-      "E-commerce functionality for HVAC products",
-      "Service booking and management system"
-    ]
-  },
-  {
     title: "IoT Temperature Monitoring System",
-    description: "Developed web applications for a pharmaceutical client to monitor temperature-sensitive storage environments. The system communicates with IoT devices using MQTT protocol to track and manage temperature data in real-time, ensuring compliance with storage requirements. Features include data visualization, alerting systems, and integration with existing monitoring infrastructure.",
+    description: "Web application for Boehringer Ingelheim, a major pharmaceutical company. Monitors temperature-sensitive storage fridges for drugs using IoT devices. Built an admin panel to monitor and send commands to IoT devices, ensuring compliance with storage requirements through real-time data visualization and alerting.",
     responsibilities: [
       "Development",
       "System Integration"
@@ -201,21 +125,21 @@ const projects: Project[] = [
       "MQTT",
       "IoT"
     ],
-    image: "https://i.pinimg.com/736x/76/8f/fc/768ffcfb71bbd701c318d2fee8362639.jpg",
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&h=600&fit=crop",
     year: "2021",
     status: "Completed",
-    client: "Pharmaceutical Company",
+    client: "Boehringer Ingelheim",
     highlights: [
-      "Real-time temperature monitoring via IoT devices",
-      "MQTT protocol integration for device communication",
-      "Data visualization and alerting systems",
-      "Compliance with storage requirements",
-      "Cloud-based infrastructure on AWS"
+      "Real-time fridge temperature monitoring via IoT devices",
+      "MQTT protocol for device communication",
+      "Admin panel for device command and control",
+      "Compliance with pharmaceutical storage requirements",
+      "Data visualization and alerting systems"
     ]
   },
   {
     title: "mariostojcevski.com",
-    description: "A personal portfolio website showcasing my work, projects, and professional journey. Built with React and React Router, featuring a neobrutalism design aesthetic with animated background blobs, colorful scrollbars, and interactive modals. The site includes sections for featured projects, games, and about me, with smooth animations and a modern UI.",
+    description: "Personal portfolio website built with React, TypeScript, and Tailwind CSS. Features a bold neobrutalist design with electric color palette, animated background blobs with mouse-tracking parallax, scroll-reveal animations, and a bottom dock navigation. Includes pages for projects, gallery, music player with multi-stem breakdown, blog, and community events.",
     responsibilities: [
       "Development",
       "Design",
@@ -225,69 +149,46 @@ const projects: Project[] = [
       "React",
       "TypeScript",
       "React Router",
-      "Tailwind CSS",
+      "Tailwind CSS v4",
+      "Framer Motion",
       "Vite"
     ],
     url: "https://mariostojcevski.github.io/MarioStojcevski/",
     image: "https://i.pinimg.com/1200x/2b/27/38/2b273887b6df3de4a38567a68be61cbf.jpg",
-    year: "2024",
+    year: "2025",
     status: "Completed",
     highlights: [
-      "Neobrutalism design aesthetic with bold colors and borders",
-      "Animated background blobs with floating effects",
-      "Interactive project modals with smooth animations",
-      "Colorful and shiny custom scrollbars",
-      "Responsive design with mobile-first approach",
-      "GitHub Pages deployment"
+      "Neobrutalist design with electric color palette",
+      "Animated blobs with mouse-tracking parallax",
+      "Bottom dock navigation for 10+ pages",
+      "Multi-stem music player with audio decomposition",
+      "Filterable masonry gallery with lightbox",
+      "Scroll-reveal and page transition animations"
     ]
   },
   {
-    title: "Deep Learning Research for Accessibility",
-    description: "Published academic papers in the field of Embedded Deep Learning, focusing on solutions to aid the mobility of individuals with disabilities. Research includes in-house bus line recognition systems and speaking assistants for hearing loss support, published in ICT Innovations conference proceedings.",
-    responsibilities: [
-      "Research",
-      "Development"
-    ],
-    technologies: [
-      "Deep Learning",
-      "Embedded Systems",
-      "Computer Vision",
-      "Natural Language Processing"
-    ],
-    image: "https://i.pinimg.com/736x/82/2c/fb/822cfb28176afc20a0a0743baf99e7e9.jpg",
-    year: "2023",
-    status: "Completed",
-    highlights: [
-      "Published paper on embedded deep learning for bus line recognition",
-      "Published paper on in-house speaking assistant for hearing loss mobility",
-      "Research focused on accessibility and mobility aids",
-      "Presented at ICT Innovations conference",
-      "Collaborative research with academic team"
-    ],
-    url: "https://proceedings.ictinnovations.org/authors/821/mario-stojchevski"
-  },
-  {
-    title: "Nekasveti - Chemical Cleaning Services",
-    description: "A family project website for a chemical cleaning services business. Built with TypeScript and modern web technologies to provide an online presence for the cleaning services company, showcasing services, contact information, and business details.",
+    title: "MebelMajstor - Chemical Cleaning Services",
+    description: "Official live website for MebelMajstor, a chemical cleaning services business. Built with pure React and Supabase for database and API. Mobile-first approach since clients prefer a web experience over installing a dedicated app. Showcases services, contact information, and business details.",
     responsibilities: [
       "Development",
       "Design"
     ],
     technologies: [
-      "TypeScript",
       "React",
-      "Vite",
-      "CSS"
+      "TypeScript",
+      "Supabase",
+      "Vite"
     ],
-    image: "https://i.pinimg.com/736x/82/2c/fb/822cfb28176afc20a0a0743baf99e7e9.jpg",
-    year: "2024",
-    status: "In Progress",
     url: "https://github.com/MarioStojcevski/nekasveti",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop",
+    year: "2025",
+    status: "Completed",
     highlights: [
-      "Family business website",
-      "Chemical cleaning services showcase",
-      "TypeScript-based development",
-      "Modern web technologies"
+      "Live production website for real business",
+      "Supabase backend for database and API",
+      "Mobile-first responsive design",
+      "Pure React without heavy frameworks",
+      "Client-focused UX for non-technical users"
     ]
   },
 ];

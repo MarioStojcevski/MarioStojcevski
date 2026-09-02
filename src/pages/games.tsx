@@ -1,31 +1,42 @@
+import { motion } from "framer-motion";
 import Layout from "@/components/layout";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GameModal } from "@/components/ui/modal";
-import { PageHeader } from "@/components/ui/page-header";
+import { ScrollReveal, StaggerChildren, StaggerItem } from "@/components/ui/scroll-reveal";
 import { games } from "@/constants/games";
 import type { Game } from "@/constants/games";
 import { useModal } from "@/hooks/use-modal";
-import { cardHoverStyles, borderBlack } from "@/lib/styles";
 
 const Games = () => {
   const { isOpen, selectedItem, open, close } = useModal<Game>();
 
   return (
     <Layout>
-      <div className="space-y-8">
-        <PageHeader
-          title="Games"
-          description="Some games I've built. They're full of bugs, so bring your patience with you! 🎮"
-          titleClassName="text-6xl lg:text-7xl font-bold text-chart-5 mb-8"
-        />
+      <ScrollReveal>
+        <motion.h1
+          className="text-5xl lg:text-7xl font-heading mb-4"
+          style={{ rotate: 1 }}
+          whileHover={{ rotate: 0 }}
+        >
+          Games
+        </motion.h1>
+        <p className="text-xl text-gray-600 max-w-2xl mb-12">
+          Some games I've built. They're full of bugs, so bring your patience with you!
+        </p>
+      </ScrollReveal>
 
-        <div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {games.map((game) => (
-              <Card key={game.title} className={`${game.color} ${borderBlack} ${cardHoverStyles}`}>
+      <StaggerChildren className="grid md:grid-cols-2 gap-8">
+        {games.map((game, index) => (
+          <StaggerItem key={game.title}>
+            <motion.div
+              style={{ rotate: (index % 2 === 0 ? -2 : 2) }}
+              whileHover={{ rotate: [0, -8, 12, -5, 8, 0], scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Card className={`${game.color} h-full`}>
                 {game.image && (
-                  <div className="w-full h-48 overflow-hidden rounded-t-base border-b-2 border-black">
+                  <div className="w-full h-48 overflow-hidden border-b-4 border-black">
                     <img
                       src={game.image}
                       alt={game.title}
@@ -34,24 +45,25 @@ const Games = () => {
                   </div>
                 )}
                 <CardHeader>
-                  <h2 className="text-3xl font-bold">{game.title}</h2>
+                  <h2 className="text-3xl font-heading">{game.title}</h2>
                 </CardHeader>
-                <CardContent className="p-6">
+                <CardContent className="pb-8">
                   {game.description && (
-                    <p className="text-base text-gray-700 mb-6">{game.description}</p>
+                    <p className="text-base mb-6">{game.description}</p>
                   )}
                   <Button
                     onClick={() => open(game)}
                     className="w-full cursor-pointer"
                   >
-                    Play Game 🎮
+                    Play Game
                   </Button>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </div>
+            </motion.div>
+          </StaggerItem>
+        ))}
+      </StaggerChildren>
+
       {selectedItem && (
         <GameModal
           game={selectedItem}
@@ -64,4 +76,3 @@ const Games = () => {
 };
 
 export default Games;
-

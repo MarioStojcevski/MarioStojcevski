@@ -1,28 +1,40 @@
+import { motion } from "framer-motion";
 import Layout from "@/components/layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { EventCard } from "@/components/ui/event-card";
-import { PageHeader } from "@/components/ui/page-header";
+import { ScrollReveal, StaggerChildren, StaggerItem } from "@/components/ui/scroll-reveal";
 import { speakingEvents, workshops } from "@/constants/community";
-import { emptyStateCardStyles, emptyStateContentStyles } from "@/lib/styles";
 
 const Community = () => {
   return (
     <Layout>
-      <div className="space-y-8">
-        <PageHeader
-          title="Dev Community"
-          description="Events I've spoken at and workshops I've held as a developer."
-          titleClassName="text-6xl font-bold mb-4"
-          descriptionClassName="text-xl text-gray-700"
-        />
+      <ScrollReveal>
+        <motion.h1
+          className="text-5xl lg:text-7xl font-heading mb-4"
+          style={{ rotate: -1 }}
+          whileHover={{ rotate: 0 }}
+        >
+          Dev Community
+        </motion.h1>
+        <p className="text-xl text-gray-600 max-w-2xl mb-12">
+          Events I've spoken at and workshops I've held as a developer.
+        </p>
+      </ScrollReveal>
 
-        <div>
-          <h2 className="text-4xl font-bold mb-6">Speaking Events</h2>
-          {speakingEvents.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2">
-              {speakingEvents.map((event, index) => (
+      <ScrollReveal>
+        <h2 className="text-4xl font-heading mb-6">Speaking Events</h2>
+      </ScrollReveal>
+
+      {speakingEvents.length > 0 ? (
+        <StaggerChildren className="grid gap-6 md:grid-cols-2 mb-12">
+          {speakingEvents.map((event, index) => (
+            <StaggerItem key={index}>
+              <motion.div
+                style={{ rotate: (index % 2 === 0 ? -1 : 1) }}
+                whileHover={{ rotate: 0 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <EventCard
-                  key={index}
                   title={event.title}
                   date={event.date}
                   location={event.location}
@@ -31,24 +43,32 @@ const Community = () => {
                   url={event.url}
                   image={event.image}
                 />
-              ))}
-            </div>
-          ) : (
-            <Card className={emptyStateCardStyles}>
-              <CardContent className={emptyStateContentStyles}>
-                No speaking events added yet. Check back soon!
-              </CardContent>
-            </Card>
-          )}
-        </div>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerChildren>
+      ) : (
+        <Card className="mb-12">
+          <CardContent className="p-6 text-center text-lg text-gray-500">
+            No speaking events added yet. Check back soon!
+          </CardContent>
+        </Card>
+      )}
 
-        <div>
-          <h2 className="text-4xl font-bold mb-6">Workshops</h2>
-          {workshops.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2">
-              {workshops.map((workshop, index) => (
+      <ScrollReveal>
+        <h2 className="text-4xl font-heading mb-6">Workshops</h2>
+      </ScrollReveal>
+
+      {workshops.length > 0 ? (
+        <StaggerChildren className="grid gap-6 md:grid-cols-2">
+          {workshops.map((workshop, index) => (
+            <StaggerItem key={index}>
+              <motion.div
+                style={{ rotate: (index % 2 === 0 ? 1 : -1) }}
+                whileHover={{ rotate: 0 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <EventCard
-                  key={index}
                   title={workshop.title}
                   date={workshop.date}
                   location={workshop.location}
@@ -57,20 +77,19 @@ const Community = () => {
                   url={workshop.url}
                   image={workshop.image}
                 />
-              ))}
-            </div>
-          ) : (
-            <Card className={emptyStateCardStyles}>
-              <CardContent className={emptyStateContentStyles}>
-                No workshops added yet. Check back soon!
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </div>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerChildren>
+      ) : (
+        <Card>
+          <CardContent className="p-6 text-center text-lg text-gray-500">
+            No workshops added yet. Check back soon!
+          </CardContent>
+        </Card>
+      )}
     </Layout>
   );
 };
 
 export default Community;
-

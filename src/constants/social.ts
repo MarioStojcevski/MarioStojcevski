@@ -21,5 +21,5 @@ export const QUICK_LINKS = [
 export const QUICK_LINKS_EXTENDED = [
   ...QUICK_LINKS,
   { to: "/community", label: "Dev Community" },
-  { to: "/soft-skills", label: "Soft Skills" },
+  { to: "/trainings", label: "Trainings" },
 ] as const;

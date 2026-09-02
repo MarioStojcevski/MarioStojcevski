@@ -5,7 +5,7 @@ function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        "flex flex-col border-2 border-black bg-white text-black rounded-base",
+        "flex flex-col border-4 border-black bg-white text-black shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]",
         className
       )}
       {...props}
